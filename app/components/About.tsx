@@ -165,7 +165,7 @@ export default function About() {
                   boxShadow: "0 0 24px rgba(0,212,170,0.25)",
                 }}
               >
-                Book a Free Call →
+                Consult Now →
               </a>
             </div>
 
