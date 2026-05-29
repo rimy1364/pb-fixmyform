@@ -155,10 +155,6 @@ export default function Transformations() {
           </button>
         </div>
 
-        {/* CTA note */}
-        <p className="text-center text-xs text-gray-500 mt-5">
-          📸 Add real before/after photos to replace the placeholders above
-        </p>
       </div>
     </section>
   );
