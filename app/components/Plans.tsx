@@ -57,7 +57,7 @@ const plans = [
 
 export default function Plans() {
   return (
-    <section id="plans" className="py-14 px-6">
+    <section id="plans" className="pt-20 pb-14 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
