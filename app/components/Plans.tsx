@@ -75,20 +75,20 @@ export default function Plans() {
           </p>
         </div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Cards — pt-5 gives room for the absolute tags */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-5">
           {plans.map((plan) => (
             <div
               key={plan.name}
               className={`relative rounded-2xl p-8 flex flex-col transition-all duration-300 ${
                 plan.highlight
-                  ? "bg-gradient-to-b from-[#00C2FF]/15 to-[#00E5A0]/5 border-2 border-[#00C2FF]/60 glow-blue scale-105"
+                  ? "bg-gradient-to-b from-[#00C2FF]/15 to-[#00E5A0]/5 border-2 border-[#00C2FF]/60 glow-blue"
                   : "bg-[#0D1528] border border-white/10 hover:border-[#00C2FF]/30"
               }`}
             >
               {/* Tag */}
               {plan.tag && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-[#00C2FF] to-[#00E5A0] text-[#0A0F1E] text-xs font-black uppercase tracking-wider">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-[#00C2FF] to-[#00E5A0] text-[#0A0F1E] text-xs font-black uppercase tracking-wider whitespace-nowrap">
                   {plan.tag}
                 </div>
               )}
