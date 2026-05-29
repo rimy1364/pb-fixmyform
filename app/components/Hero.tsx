@@ -31,12 +31,6 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center flex flex-col items-center">
 
-        {/* Pill label */}
-        <div className="inline-flex items-center gap-2 mb-8 px-5 py-2 rounded-full border border-[#00C2FF]/40 bg-[#00C2FF]/10 text-[#00C2FF] text-sm font-semibold tracking-wider">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#00C2FF] animate-pulse" />
-          Online Fitness Coaching
-        </div>
-
         {/* Headline hierarchy */}
         <div className="mb-6 leading-none">
           {/* Setup line — small, light */}
