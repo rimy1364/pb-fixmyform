@@ -52,29 +52,6 @@ export default function Hero() {
           </p>
         </div>
 
-        {/* Coach row — avatar + subheadline */}
-        <div className="flex items-center justify-center gap-4 mb-8">
-          {/* Circular headshot */}
-          <div className="relative flex-shrink-0">
-            <div className="w-14 h-14 rounded-full border-2 border-[#00C2FF] bg-gradient-to-br from-[#0d2a40] to-[#0A1A2E] flex items-center justify-center text-xl font-black text-[#00C2FF]">
-              PB
-            </div>
-            {/* Teal verified badge */}
-            <div className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-[#00C2FF] flex items-center justify-center border-2 border-[#0A0F1E]">
-              <svg width="9" height="7" viewBox="0 0 9 7" fill="none">
-                <path d="M1 3.5L3.2 5.5L8 1" stroke="#0A0F1E" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </div>
-          </div>
-
-          {/* Subheadline */}
-          <p className="text-sm md:text-base text-gray-400 text-left max-w-xs leading-snug">
-            Work directly with{" "}
-            <span className="text-white font-semibold">Prateek Bansal</span> —
-            science-backed coaching that fits your life.
-          </p>
-        </div>
-
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-3 justify-center mb-14">
           <a
