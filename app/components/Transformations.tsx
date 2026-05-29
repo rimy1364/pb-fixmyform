@@ -59,7 +59,7 @@ export default function Transformations() {
   };
 
   return (
-    <section id="transformations" className="py-14 px-6 relative overflow-hidden">
+    <section id="transformations" className="pt-20 pb-14 px-6 relative overflow-hidden">
       {/* Background accent */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#00C2FF]/30 to-transparent" />
