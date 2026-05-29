@@ -148,9 +148,8 @@ export default function Plans() {
         <p className="text-center text-sm text-gray-500 mt-6">
           Not sure which plan is right for you?{" "}
           <a href="#" className="text-[#00C2FF] hover:underline">
-            Book a free 15-min call
-          </a>{" "}
-          with Prateek.
+            Book a quick 15-min call.
+          </a>
         </p>
       </div>
     </section>
