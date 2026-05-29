@@ -74,12 +74,6 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full border border-[#00C2FF]/30 bg-[#00C2FF]/10 text-[#00C2FF] text-sm font-medium">
-          <span className="w-2 h-2 rounded-full bg-[#00E5A0] animate-pulse" />
-          India&apos;s Premier Fitness Consulting
-        </div>
-
         {/* Headline */}
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-black leading-none tracking-tight mb-6">
           <span className="block text-white">FIX YOUR</span>
