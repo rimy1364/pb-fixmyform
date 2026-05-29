@@ -44,10 +44,10 @@ export default function Navbar() {
             <a
               key={l.href}
               href={l.href}
-              className="text-sm font-medium text-gray-300 hover:text-white transition-colors relative group"
+              className="text-sm font-medium text-white transition-colors relative group"
             >
               {l.label}
-              <span className="absolute -bottom-1 left-0 w-0 h-px bg-[#00C2FF] group-hover:w-full transition-all duration-300" />
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#00C2FF] group-hover:w-full transition-all duration-300 rounded-full" />
             </a>
           ))}
         </nav>
