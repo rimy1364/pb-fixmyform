@@ -50,7 +50,7 @@ export default function About() {
             </h2>
 
             <p className="text-gray-400 leading-relaxed mb-4 text-sm sm:text-base">
-              Prateek Bansal founded <strong className="text-white">FIXMYFORM</strong> with one
+              Prateek Bansal founded <strong className="text-white">FIXYOURBODY</strong> with one
               mission — to cut through the noise of the fitness industry and
               deliver real, sustainable results. No gimmicks. No fad diets.
               Just evidence-based coaching tailored to your body and lifestyle.

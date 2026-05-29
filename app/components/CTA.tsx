@@ -21,7 +21,7 @@ export default function CTA() {
             <h2 className="text-3xl sm:text-4xl md:text-6xl font-black mb-5 leading-tight">
               <span className="text-white">Ready to</span>
               <br />
-              <span className="gradient-text">Fix Your Form?</span>
+              <span className="gradient-text">Fix Your Body?</span>
             </h2>
 
             <p className="text-gray-400 text-sm sm:text-base mb-8 max-w-xl mx-auto leading-relaxed">

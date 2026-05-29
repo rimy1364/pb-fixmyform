@@ -34,7 +34,7 @@ const testimonials = [
   {
     name: "Aditya Verma",
     role: "CA, Hyderabad",
-    text: "I went from barely doing 5 pushups to benching 80kg in 6 months. FIXMYFORM is not just a programme — it's a complete mindset shift.",
+    text: "I went from barely doing 5 pushups to benching 80kg in 6 months. FIXYOURBODY is not just a programme — it's a complete mindset shift.",
     stars: 5,
     result: "+8 kg muscle",
   },

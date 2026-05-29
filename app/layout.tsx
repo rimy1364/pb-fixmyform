@@ -8,11 +8,11 @@ const geist = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "FIXMYFORM | Expert Fitness Consulting by Prateek Bansal",
+  title: "FIXYOURBODY | Expert Fitness Consulting by Prateek Bansal",
   description:
-    "Transform your body with FIXMYFORM. Expert fitness consulting, personalised plans, and proven transformations by Prateek Bansal.",
+    "Transform your body with FIXYOURBODY. Expert fitness consulting, personalised plans, and proven transformations by Prateek Bansal.",
   openGraph: {
-    title: "FIXMYFORM | Expert Fitness Consulting",
+    title: "FIXYOURBODY | Expert Fitness Consulting",
     description: "Transform your body with proven coaching by Prateek Bansal.",
     type: "website",
   },

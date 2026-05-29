@@ -39,7 +39,7 @@ export default function Hero() {
             className="font-black tracking-tight gradient-text"
             style={{ fontSize: "clamp(4rem, 18vw, 13rem)", lineHeight: 0.9 }}
           >
-            FORM.
+            BODY.
           </h1>
           <p className="text-xl sm:text-2xl md:text-3xl font-semibold text-white tracking-wide mt-4">
             Fix Your Life.

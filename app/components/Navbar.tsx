@@ -33,8 +33,8 @@ export default function Navbar() {
         <a href="#" className="flex items-center gap-2 group">
           <span className="text-xl font-black tracking-widest">
             <span className="gradient-text">FIX</span>
-            <span className="text-white">MY</span>
-            <span className="gradient-text">FORM</span>
+            <span className="text-white">YOUR</span>
+            <span className="gradient-text">BODY</span>
           </span>
         </a>
 

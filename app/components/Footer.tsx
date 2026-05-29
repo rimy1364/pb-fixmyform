@@ -27,8 +27,8 @@ export default function Footer() {
           <div className="col-span-2 md:col-span-2">
             <div className="text-2xl font-black tracking-widest mb-4">
               <span className="gradient-text">FIX</span>
-              <span className="text-white">MY</span>
-              <span className="gradient-text">FORM</span>
+              <span className="text-white">YOUR</span>
+              <span className="gradient-text">BODY</span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs mb-6">
               Science-backed fitness consulting that transforms your body and
@@ -102,7 +102,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-gray-500">
-            © {new Date().getFullYear()} FIXMYFORM. All rights reserved. Founded by Prateek Bansal.
+            © {new Date().getFullYear()} FIXYOURBODY. All rights reserved. Founded by Prateek Bansal.
           </p>
           <div className="flex gap-6">
             <a href="#" className="text-xs text-gray-500 hover:text-gray-300 transition-colors">
