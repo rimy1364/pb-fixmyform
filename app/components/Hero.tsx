@@ -9,7 +9,7 @@ const stats = [
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4">
-      {/* Clean radial gradient background */}
+      {/* Dark navy base */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -17,41 +17,63 @@ export default function Hero() {
             "radial-gradient(ellipse 80% 60% at 50% 40%, #0d1f3c 0%, #0A0F1E 60%, #060a14 100%)",
         }}
       />
-      {/* Subtle teal glow */}
-      <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
-        <div
-          className="w-[400px] h-[300px] md:w-[600px] md:h-[400px] rounded-full opacity-20"
-          style={{
-            background: "radial-gradient(ellipse at center, #00C2FF 0%, transparent 70%)",
-            filter: "blur(80px)",
-          }}
-        />
-      </div>
+
+      {/* Radial teal glow behind BODY. — 6% opacity, 600px radius */}
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          top: "30%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          width: "600px",
+          height: "600px",
+          background: "radial-gradient(circle, rgba(0,212,170,0.06) 0%, transparent 70%)",
+          filter: "blur(40px)",
+        }}
+      />
 
       <div className="relative z-10 w-full max-w-4xl mx-auto text-center flex flex-col items-center">
 
-        {/* Headline hierarchy */}
-        <div className="mb-8 leading-none">
-          <p className="text-lg sm:text-xl md:text-2xl font-light text-white/60 tracking-[0.2em] uppercase mb-2">
-            Fix Your
+        {/* Headline */}
+        <div className="leading-none">
+          {/* Setup — white 55% opacity, tight tracking */}
+          <p
+            className="text-lg sm:text-xl md:text-2xl font-light uppercase mb-2"
+            style={{ color: "rgba(255,255,255,0.55)", letterSpacing: "0.15em" }}
+          >
+            FIX YOUR
           </p>
+
+          {/* Hero word — solid #00d4aa, no gradient */}
           <h1
-            className="font-black tracking-tight gradient-text"
-            style={{ fontSize: "clamp(4rem, 18vw, 13rem)", lineHeight: 0.9 }}
+            className="font-black tracking-tight"
+            style={{
+              fontSize: "clamp(4rem, 18vw, 13rem)",
+              lineHeight: 0.9,
+              color: "#00d4aa",
+            }}
           >
             BODY.
           </h1>
-          <p className="text-xl sm:text-2xl md:text-3xl font-semibold text-white tracking-wide mt-4">
-            Fix Your Life.
+
+          {/* Payoff — all-caps, white, font-weight 700 */}
+          <p
+            className="uppercase tracking-wide font-bold text-white mt-4"
+            style={{ fontSize: "clamp(1.1rem, 4vw, 2rem)" }}
+          >
+            FIX YOUR LIFE.
           </p>
         </div>
 
+        {/* 48px gap between payoff and CTAs */}
+        <div style={{ height: "48px" }} />
+
         {/* CTAs */}
-        <div className="flex flex-col sm:flex-row gap-3 justify-center mb-12 w-full sm:w-auto">
+        <div className="flex flex-col sm:flex-row gap-3 justify-center w-full sm:w-auto">
           <a
             href="#plans"
-            className="px-8 py-3.5 rounded-full bg-[#00C2FF] text-white font-bold text-sm tracking-wide hover:bg-[#00AADD] transition-colors text-center"
-            style={{ boxShadow: "0 0 24px rgba(0,194,255,0.35)" }}
+            className="px-8 py-3.5 rounded-full bg-[#00d4aa] text-white font-bold text-sm tracking-wide hover:bg-[#00bfa0] transition-colors text-center"
+            style={{ boxShadow: "0 0 24px rgba(0,212,170,0.35)" }}
           >
             Explore Plans
           </a>
@@ -63,13 +85,24 @@ export default function Hero() {
           </a>
         </div>
 
-        {/* Stats bar */}
-        <div className="flex items-stretch divide-x divide-white/15 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm overflow-hidden w-full sm:w-auto">
-          {stats.map((s) => (
-            <div key={s.label} className="flex-1 px-4 sm:px-8 py-4 text-center">
+        {/* 56px gap between buttons and stats */}
+        <div style={{ height: "56px" }} />
+
+        {/* Stats — bare, no card, vertical dividers only */}
+        <div className="flex items-center w-full sm:w-auto">
+          {stats.map((s, i) => (
+            <div
+              key={s.label}
+              className="flex-1 sm:flex-none text-center"
+              style={{
+                paddingLeft: i === 0 ? 0 : "2.5rem",
+                paddingRight: i === stats.length - 1 ? 0 : "2.5rem",
+                borderLeft: i === 0 ? "none" : "1px solid rgba(255,255,255,0.15)",
+              }}
+            >
               <div
-                className="text-xl sm:text-2xl md:text-3xl font-black gradient-text"
-                style={{ textShadow: "0 0 20px rgba(0,194,255,0.5)" }}
+                className="text-2xl sm:text-3xl font-black"
+                style={{ color: "#00d4aa" }}
               >
                 {s.value}
               </div>
@@ -82,7 +115,7 @@ export default function Hero() {
       {/* Scroll indicator */}
       <a
         href="#about"
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 text-gray-500 hover:text-[#00C2FF] transition-colors animate-bounce"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 text-gray-500 hover:text-[#00d4aa] transition-colors animate-bounce"
       >
         <ChevronDown size={22} />
       </a>
