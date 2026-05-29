@@ -49,7 +49,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="py-24 px-6 relative overflow-hidden">
+    <section id="testimonials" className="py-16 px-5 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#00C2FF]/30 to-transparent" />
@@ -57,16 +57,15 @@ export default function Testimonials() {
 
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-block px-3 py-1 rounded-full border border-[#00C2FF]/30 bg-[#00C2FF]/10 text-[#00C2FF] text-xs font-semibold uppercase tracking-widest mb-4">
+        <div className="text-center mb-10">
+          <div className="inline-block px-3 py-1 rounded-full border border-[#00C2FF]/30 bg-[#00C2FF]/10 text-[#00C2FF] text-xs font-semibold uppercase tracking-widest mb-3">
             Testimonials
           </div>
-          <h2 className="text-4xl md:text-5xl font-black mb-4">
-            <span className="text-white">What Clients</span>
-            <br />
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-3">
+            <span className="text-white">What Clients </span>
             <span className="gradient-text">Are Saying</span>
           </h2>
-          <p className="text-gray-400 max-w-xl mx-auto">
+          <p className="text-gray-400 text-sm sm:text-base max-w-xl mx-auto">
             Don&apos;t take our word for it — hear from people who made the leap.
           </p>
         </div>

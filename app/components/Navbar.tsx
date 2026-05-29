@@ -60,26 +60,26 @@ export default function Navbar() {
           Start Now
         </a>
 
-        {/* Mobile menu button */}
+        {/* Mobile menu button — larger tap target */}
         <button
-          className="md:hidden text-white"
+          className="md:hidden text-white p-2 -mr-2"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
-          {open ? <X size={24} /> : <Menu size={24} />}
+          {open ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
       {/* Mobile menu */}
       {open && (
         <div className="md:hidden bg-[#0A0F1E]/98 backdrop-blur-md border-b border-white/10">
-          <nav className="flex flex-col gap-1 px-6 py-4">
+          <nav className="flex flex-col gap-1 px-5 py-3">
             {links.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="py-3 text-sm font-medium text-gray-300 hover:text-white border-b border-white/5 transition-colors"
+                className="py-4 text-base font-medium text-white border-b border-white/5 transition-colors active:text-[#00C2FF]"
               >
                 {l.label}
               </a>

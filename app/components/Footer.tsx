@@ -17,14 +17,14 @@ const links = {
 
 export default function Footer() {
   return (
-    <footer className="relative border-t border-white/10 pt-16 pb-8 px-6">
+    <footer className="relative border-t border-white/10 pt-10 pb-8 px-5">
       {/* Top gradient line */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#00C2FF]/40 to-transparent" />
 
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
           {/* Brand */}
-          <div className="md:col-span-2">
+          <div className="col-span-2 md:col-span-2">
             <div className="text-2xl font-black tracking-widest mb-4">
               <span className="gradient-text">FIX</span>
               <span className="text-white">MY</span>
@@ -100,7 +100,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-gray-500">
             © {new Date().getFullYear()} FIXMYFORM. All rights reserved. Founded by Prateek Bansal.
           </p>
