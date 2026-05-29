@@ -57,30 +57,28 @@ const plans = [
 
 export default function Plans() {
   return (
-    <section id="plans" className="py-24 px-6">
+    <section id="plans" className="py-14 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-block px-3 py-1 rounded-full border border-[#00C2FF]/30 bg-[#00C2FF]/10 text-[#00C2FF] text-xs font-semibold uppercase tracking-widest mb-4">
+        <div className="text-center mb-8">
+          <div className="inline-block px-3 py-1 rounded-full border border-[#00C2FF]/30 bg-[#00C2FF]/10 text-[#00C2FF] text-xs font-semibold uppercase tracking-widest mb-3">
             Pricing
           </div>
-          <h2 className="text-4xl md:text-5xl font-black mb-4">
-            <span className="text-white">Choose Your</span>
-            <br />
+          <h2 className="text-3xl md:text-4xl font-black mb-2">
+            <span className="text-white">Choose Your </span>
             <span className="gradient-text">Transformation Plan</span>
           </h2>
-          <p className="text-gray-400 max-w-xl mx-auto">
-            No lock-ins. Cancel anytime. Every plan is built around your goals,
-            not a generic template.
+          <p className="text-gray-400 text-sm max-w-xl mx-auto">
+            No lock-ins. Cancel anytime. Every plan is built around your goals, not a generic template.
           </p>
         </div>
 
-        {/* Cards — pt-5 gives room for the absolute tags */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-5">
+        {/* Cards — pt-6 gives room for the absolute tags */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6">
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`relative rounded-2xl p-8 flex flex-col transition-all duration-300 ${
+              className={`relative rounded-2xl p-6 flex flex-col transition-all duration-300 ${
                 plan.highlight
                   ? "bg-gradient-to-b from-[#00C2FF]/15 to-[#00E5A0]/5 border-2 border-[#00C2FF]/60 glow-blue"
                   : "bg-[#0D1528] border border-white/10 hover:border-[#00C2FF]/30"
@@ -94,11 +92,11 @@ export default function Plans() {
               )}
 
               {/* Plan info */}
-              <div className="mb-6">
-                <h3 className="text-xl font-black text-white mb-2">{plan.name}</h3>
-                <div className="flex items-baseline gap-1 mb-3">
+              <div className="mb-4">
+                <h3 className="text-lg font-black text-white mb-1">{plan.name}</h3>
+                <div className="flex items-baseline gap-1 mb-2">
                   <span
-                    className={`text-4xl font-black ${
+                    className={`text-3xl font-black ${
                       plan.highlight ? "gradient-text" : "text-white"
                     }`}
                   >
@@ -106,22 +104,22 @@ export default function Plans() {
                   </span>
                   <span className="text-gray-500 text-sm">{plan.duration}</span>
                 </div>
-                <p className="text-sm text-gray-400 leading-relaxed">{plan.description}</p>
+                <p className="text-xs text-gray-400 leading-relaxed">{plan.description}</p>
               </div>
 
               {/* Features */}
-              <ul className="space-y-3 mb-8 flex-1">
+              <ul className="space-y-2 mb-5 flex-1">
                 {plan.features.map((f) => (
-                  <li key={f} className="flex items-start gap-3 text-sm text-gray-300">
+                  <li key={f} className="flex items-center gap-2.5 text-sm text-gray-300">
                     <span
-                      className={`flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center mt-0.5 ${
+                      className={`flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center ${
                         plan.highlight
                           ? "bg-gradient-to-br from-[#00C2FF] to-[#00E5A0]"
                           : "bg-[#00C2FF]/20"
                       }`}
                     >
                       <Check
-                        size={11}
+                        size={9}
                         strokeWidth={3}
                         className={plan.highlight ? "text-[#0A0F1E]" : "text-[#00C2FF]"}
                       />
@@ -133,7 +131,7 @@ export default function Plans() {
 
               {/* CTA */}
               <button
-                className={`w-full py-3.5 rounded-xl font-bold text-sm transition-all duration-200 cursor-pointer ${
+                className={`w-full py-3 rounded-xl font-bold text-sm transition-all duration-200 cursor-pointer ${
                   plan.highlight
                     ? "bg-gradient-to-r from-[#00C2FF] to-[#00E5A0] text-[#0A0F1E] hover:opacity-90 glow-blue"
                     : "border border-[#00C2FF]/40 text-[#00C2FF] hover:bg-[#00C2FF]/10"
@@ -147,7 +145,7 @@ export default function Plans() {
         </div>
 
         {/* Note */}
-        <p className="text-center text-sm text-gray-500 mt-10">
+        <p className="text-center text-sm text-gray-500 mt-6">
           Not sure which plan is right for you?{" "}
           <a href="#" className="text-[#00C2FF] hover:underline">
             Book a free 15-min call
