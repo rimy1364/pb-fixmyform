@@ -26,21 +26,12 @@ body {
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 
-/* Gradient text utility */
-.gradient-text {
-  background: linear-gradient(135deg, #00C2FF 0%, #00E5A0 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+/* Teal glow utility */
+.glow-teal {
+  box-shadow: 0 0 40px rgba(0, 212, 170, 0.25);
 }
-
-/* Glow effect */
-.glow-blue {
-  box-shadow: 0 0 40px rgba(0, 194, 255, 0.3);
-}
-
-.glow-blue-sm {
-  box-shadow: 0 0 20px rgba(0, 194, 255, 0.2);
+.glow-teal-sm {
+  box-shadow: 0 0 20px rgba(0, 212, 170, 0.15);
 }
 
 /* Hide scrollbar on carousel rows but keep scroll functional */
