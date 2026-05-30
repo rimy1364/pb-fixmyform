@@ -4,12 +4,9 @@ const credentials = [
   "8+ Years of Coaching Experience",
   "INFS Certified Nutrition & Fitness Professional",
   "Resistance Training Specialist (RTS Certified)",
-  "6+ Years with Team Aminder",
-  "Experience Working Alongside FITTR Coaches",
   "500+ Successful Transformations",
   "Fat Loss & Body Recomposition Specialist",
   "Muscle Building & Strength Development Coach",
-  "Science-Based Training & Nutrition Coaching",
 ];
 
 export default function About() {
