@@ -1,9 +1,9 @@
 "use client";
 
 const credentials = [
-  "Certified Strength & Conditioning Coach",
-  "Sports Nutrition Specialist",
-  "5+ Years Coaching Experience",
+  "Certified Nutrition & Fitness Consultant",
+  "Resistant Training Specialist",
+  "8+ Years Coaching Experience",
   "500+ Successful Transformations",
 ];
 

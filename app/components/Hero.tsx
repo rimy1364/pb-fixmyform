@@ -1,9 +1,9 @@
 import { ChevronDown } from "lucide-react";
 
 const stats = [
-  { value: "500+", label: "Clients Transformed" },
+  { value: "500+", label: "Lives Transformed" },
   { value: "98%",  label: "Success Rate" },
-  { value: "5+",   label: "Years Experience" },
+  { value: "8+",   label: "Years Experience" },
 ];
 
 export default function Hero() {
@@ -76,7 +76,7 @@ export default function Hero() {
             lineHeight: 1.6,
           }}
         >
-          500+ clients transformed. Science-backed. Real results.
+          500+ Lives transformed. Science-backed. Real Results.
         </p>
 
         {/* 36px gap then CTAs */}
