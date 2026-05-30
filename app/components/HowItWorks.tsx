@@ -31,8 +31,8 @@ const steps = [
   },
   {
     step: "07",
-    title: "Gym Independence",
-    description: "Leave with the knowledge, habits, and confidence to train on your own — results that last a lifetime.",
+    title: "Graduate. Train Forever.",
+    description: "You leave with the knowledge, habits, and confidence to train, eat, and progress entirely on your own — no coach, no dependency, for life.",
   },
 ];
 
