@@ -1,9 +1,10 @@
 "use client";
 
 // ── REPLACE THESE WITH YOUR REAL VALUES ──────────────────────────────────────
-const WHATSAPP_NUMBER = "919205802858";
-const WHATSAPP_MESSAGE = "Hi Prateek, I am interested in FIXYOURBODY coaching. Can we connect?";
-const GOOGLE_FORM_URL  = "https://forms.google.com"; // paste your Google Form link here
+const WHATSAPP_NUMBER   = "919205802858";
+const WHATSAPP_MESSAGE  = "Hi Prateek, I am interested in FIXYOURBODY coaching. Can we connect?";
+const GOOGLE_FORM_URL   = "https://forms.google.com"; // paste your Google Form link here
+const INSTAGRAM_HANDLE  = "fixyourbody"; // replace with your real Instagram username
 // ─────────────────────────────────────────────────────────────────────────────
 
 const waLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
@@ -40,7 +41,7 @@ export default function Contact() {
         </div>
 
         {/* 3 Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
 
           {/* 1 — WhatsApp */}
           <a
@@ -194,6 +195,65 @@ export default function Contact() {
               </button>
             </div>
           </div>
+
+          {/* 4 — Instagram DM */}
+          <a
+            href={`https://instagram.com/${INSTAGRAM_HANDLE}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex flex-col items-center text-center rounded-2xl p-8 transition-all duration-300 hover:scale-[1.02]"
+            style={{
+              background: "#0a1628",
+              border: "1.5px solid rgba(0,212,170,0.25)",
+              textDecoration: "none",
+            }}
+          >
+            {/* Instagram icon */}
+            <div
+              className="flex items-center justify-center mb-5"
+              style={{
+                width: "64px",
+                height: "64px",
+                borderRadius: "50%",
+                background: "rgba(225,48,108,0.10)",
+                border: "1.5px solid rgba(225,48,108,0.30)",
+              }}
+            >
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#igGrad)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <defs>
+                  <linearGradient id="igGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#f09433"/>
+                    <stop offset="25%" stopColor="#e6683c"/>
+                    <stop offset="50%" stopColor="#dc2743"/>
+                    <stop offset="75%" stopColor="#cc2366"/>
+                    <stop offset="100%" stopColor="#bc1888"/>
+                  </linearGradient>
+                </defs>
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+              </svg>
+            </div>
+
+            <h3 className="font-bold text-white mb-2" style={{ fontSize: "17px" }}>
+              DM on Instagram
+            </h3>
+            <p style={{ fontSize: "13px", color: "rgba(255,255,255,0.50)", lineHeight: 1.6, marginBottom: "20px" }}>
+              Slide into our DMs on Instagram. See transformations, tips, and connect directly.
+            </p>
+            <span
+              className="mt-auto font-bold"
+              style={{
+                background: "linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)",
+                color: "#fff",
+                borderRadius: "999px",
+                padding: "10px 24px",
+                fontSize: "13px",
+              }}
+            >
+              DM Us →
+            </span>
+          </a>
 
         </div>
       </div>
