@@ -44,7 +44,7 @@ const transformations = [
 
 export default function Transformations() {
   const [current, setCurrent] = useState(0);
-  const visible = 3;
+  const visible = 2;
   const total = transformations.length;
 
   const prev = () => setCurrent((c) => (c - 1 + total) % total);
@@ -82,7 +82,7 @@ export default function Transformations() {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6">
           {getVisible().map((t, i) => (
             <div
               key={`${t.name}-${i}`}

@@ -1,7 +1,7 @@
 "use client";
 
 // ── REPLACE THESE WITH YOUR REAL VALUES ──────────────────────────────────────
-const WHATSAPP_NUMBER = "919999999999"; // e.g. 919876543210 (country code + number, no +)
+const WHATSAPP_NUMBER = "919205802858";
 const WHATSAPP_MESSAGE = "Hi Prateek, I am interested in FIXYOURBODY coaching. Can we connect?";
 const GOOGLE_FORM_URL  = "https://forms.google.com"; // paste your Google Form link here
 // ─────────────────────────────────────────────────────────────────────────────

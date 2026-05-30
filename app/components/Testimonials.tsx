@@ -48,7 +48,7 @@ const testimonials = [
   },
 ];
 
-const VISIBLE = 3;
+const VISIBLE = 2;
 const TOTAL = testimonials.length;
 
 export default function Testimonials() {
@@ -96,7 +96,7 @@ export default function Testimonials() {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">
           {getVisible().map((t, i) => (
             <div
               key={`${t.name}-${i}`}
