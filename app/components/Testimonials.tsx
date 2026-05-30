@@ -1,6 +1,7 @@
 "use client";
 
-import { Star } from "lucide-react";
+import { useState } from "react";
+import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 
 const testimonials = [
   {
@@ -47,65 +48,147 @@ const testimonials = [
   },
 ];
 
+const VISIBLE = 3;
+const TOTAL = testimonials.length;
+
 export default function Testimonials() {
+  const [current, setCurrent] = useState(0);
+
+  const prev = () => setCurrent((c) => (c - 1 + TOTAL) % TOTAL);
+  const next = () => setCurrent((c) => (c + 1) % TOTAL);
+
+  const getVisible = () =>
+    Array.from({ length: VISIBLE }, (_, i) => testimonials[(current + i) % TOTAL]);
+
   return (
     <section id="testimonials" className="pt-20 pb-16 px-5 relative overflow-hidden">
-      {/* Background */}
+      {/* Top divider line */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#00C2FF]/30 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#00d4aa]/30 to-transparent" />
       </div>
 
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-10">
-          <div className="inline-block px-3 py-1 rounded-full border border-[#00C2FF]/30 bg-[#00C2FF]/10 text-[#00C2FF] text-xs font-semibold uppercase tracking-widest mb-3">
+        <div className="text-center mb-8">
+          <div
+            className="inline-block mb-3"
+            style={{
+              padding: "4px 14px",
+              borderRadius: "999px",
+              border: "1px solid rgba(0,212,170,0.30)",
+              background: "rgba(0,212,170,0.08)",
+              color: "#00d4aa",
+              fontSize: "11px",
+              fontWeight: 600,
+              letterSpacing: "0.12em",
+              textTransform: "uppercase",
+            }}
+          >
             Testimonials
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-3">
+          <h2 className="text-3xl sm:text-4xl font-black mb-2">
             <span className="text-white">What Clients </span>
-            <span className="gradient-text">Are Saying</span>
+            <span style={{ color: "#00d4aa" }}>Are Saying</span>
           </h2>
-          <p className="text-gray-400 text-sm sm:text-base max-w-xl mx-auto">
+          <p className="text-sm max-w-xl mx-auto" style={{ color: "rgba(255,255,255,0.50)" }}>
             Don&apos;t take our word for it — hear from people who made the leap.
           </p>
         </div>
 
-        {/* Cards — horizontal scroll on all screen sizes */}
-        <div className="flex gap-5 overflow-x-auto pb-4 snap-x snap-mandatory scroll-smooth -mx-5 px-5 scrollbar-hide">
-          {testimonials.map((t, i) => (
+        {/* Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
+          {getVisible().map((t, i) => (
             <div
-              key={i}
-              className="rounded-2xl p-6 bg-[#0D1528] border border-white/10 hover:border-[#00C2FF]/30 transition-all duration-300 flex flex-col flex-shrink-0 snap-start"
-              style={{ width: "clamp(280px, 80vw, 340px)" }}
+              key={`${t.name}-${i}`}
+              className="rounded-2xl p-6 flex flex-col transition-all duration-300"
+              style={{
+                background: "#0D1528",
+                border: "1px solid rgba(255,255,255,0.10)",
+              }}
             >
               {/* Stars */}
               <div className="flex gap-1 mb-4">
                 {Array.from({ length: t.stars }).map((_, s) => (
-                  <Star
-                    key={s}
-                    size={14}
-                    className="fill-[#FFB800] text-[#FFB800]"
-                  />
+                  <Star key={s} size={14} className="fill-[#FFB800] text-[#FFB800]" />
                 ))}
               </div>
 
               {/* Quote */}
-              <p className="text-sm text-gray-300 leading-relaxed mb-5 flex-1">
+              <p className="text-sm leading-relaxed mb-5 flex-1" style={{ color: "rgba(255,255,255,0.75)" }}>
                 &ldquo;{t.text}&rdquo;
               </p>
 
               {/* Footer */}
-              <div className="flex items-center justify-between pt-4 border-t border-white/10">
+              <div className="flex items-center justify-between pt-4" style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}>
                 <div>
                   <div className="font-bold text-white text-sm">{t.name}</div>
-                  <div className="text-xs text-gray-500">{t.role}</div>
+                  <div className="text-xs mt-0.5" style={{ color: "rgba(255,255,255,0.40)" }}>{t.role}</div>
                 </div>
-                <div className="text-right">
-                  <div className="text-xs font-bold gradient-text">{t.result}</div>
+                <div
+                  className="text-xs font-bold px-2 py-1 rounded-full"
+                  style={{ color: "#00d4aa", background: "rgba(0,212,170,0.10)", whiteSpace: "nowrap" }}
+                >
+                  {t.result}
                 </div>
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Controls — matching Transformations style */}
+        <div className="flex items-center justify-center gap-4">
+          <button
+            onClick={prev}
+            className="flex items-center justify-center transition-all"
+            style={{
+              width: "40px", height: "40px",
+              borderRadius: "50%",
+              border: "1px solid rgba(255,255,255,0.20)",
+              color: "rgba(255,255,255,0.50)",
+              background: "transparent",
+              cursor: "pointer",
+            }}
+            onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.borderColor = "#00d4aa"; (e.currentTarget as HTMLButtonElement).style.color = "#00d4aa"; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(255,255,255,0.20)"; (e.currentTarget as HTMLButtonElement).style.color = "rgba(255,255,255,0.50)"; }}
+          >
+            <ChevronLeft size={16} />
+          </button>
+
+          {/* Dots */}
+          <div className="flex gap-2">
+            {Array.from({ length: TOTAL }).map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrent(i)}
+                className="transition-all duration-300 rounded-full"
+                style={{
+                  height: "8px",
+                  width: i === current ? "24px" : "8px",
+                  background: i === current ? "#00d4aa" : "rgba(255,255,255,0.20)",
+                  border: "none",
+                  cursor: "pointer",
+                  padding: 0,
+                }}
+              />
+            ))}
+          </div>
+
+          <button
+            onClick={next}
+            className="flex items-center justify-center transition-all"
+            style={{
+              width: "40px", height: "40px",
+              borderRadius: "50%",
+              border: "1px solid rgba(255,255,255,0.20)",
+              color: "rgba(255,255,255,0.50)",
+              background: "transparent",
+              cursor: "pointer",
+            }}
+            onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.borderColor = "#00d4aa"; (e.currentTarget as HTMLButtonElement).style.color = "#00d4aa"; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(255,255,255,0.20)"; (e.currentTarget as HTMLButtonElement).style.color = "rgba(255,255,255,0.50)"; }}
+          >
+            <ChevronRight size={16} />
+          </button>
         </div>
       </div>
     </section>
