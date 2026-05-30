@@ -25,7 +25,7 @@ export default function About() {
           className="mb-4"
           style={{ fontSize: "15px", color: "rgba(255,255,255,0.65)", lineHeight: 1.80 }}
         >
-          At FIXYOURBODY, we believe real fitness means training with confidence — not dependency. Our coaching system is built to make you gym-independent: equipped with the knowledge, technique, and discipline to work out effectively on your own terms.
+          At FIXYOURBODY, we believe real fitness means training with confidence — not dependency. Our coaching system is built to make you trainer-independent: equipped with the knowledge, technique, and discipline to work out effectively on your own terms.
         </p>
         <p
           className="mb-8"
