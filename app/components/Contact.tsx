@@ -4,7 +4,7 @@
 const WHATSAPP_NUMBER   = "919205802858";
 const WHATSAPP_MESSAGE  = "Hi Prateek, I am interested in FIXYOURBODY coaching. Can we connect?";
 const GOOGLE_FORM_URL   = "https://forms.google.com"; // paste your Google Form link here
-const INSTAGRAM_HANDLE  = "fixyourbody"; // replace with your real Instagram username
+const INSTAGRAM_HANDLE  = "fixyourbody__";
 // ─────────────────────────────────────────────────────────────────────────────
 
 const waLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
