@@ -12,10 +12,9 @@ const plans = [
     features: [
       "Personalised workout plan",
       "Custom meal plan",
-      "Weekly check-in (WhatsApp)",
-      "2× monthly video calls",
-      "Progress photo analysis",
-      "Supplement guidance",
+      "Daily exercise form correction",
+      "Fortnight progress check-ins",
+      "24×7 WhatsApp support",
     ],
     cta: "Start Transforming",
     highlight: false,
