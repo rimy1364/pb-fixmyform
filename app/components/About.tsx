@@ -31,7 +31,7 @@ export default function About() {
           className="mb-8"
           style={{ fontSize: "15px", color: "rgba(255,255,255,0.65)", lineHeight: 1.80 }}
         >
-          We go beyond generic programmes. Every client receives a precision-built approach — personalised nutrition, progressive structured training, lifestyle integration, and continuous accountability — ensuring results don&apos;t fade when the coaching ends. They become your new baseline.
+          We don&apos;t do one-size-fits-all. Every client gets a plan built around them — the right nutrition, the right training, and constant support — so the results stick well beyond the coaching period.
         </p>
 
         {/* Credentials label */}
