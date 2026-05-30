@@ -4,41 +4,25 @@ import { Check } from "lucide-react";
 
 const plans = [
   {
-    name: "Kickstart",
-    price: "₹4,999",
-    duration: "/ month",
-    tag: null,
-    description: "Perfect for beginners ready to build the right foundation.",
-    features: [
-      "Personalised workout plan",
-      "Basic nutrition guidelines",
-      "Weekly check-in (WhatsApp)",
-      "Form correction tips",
-      "Access to exercise library",
-    ],
-    cta: "Get Started",
-    highlight: false,
-  },
-  {
     name: "Transform",
-    price: "₹9,999",
-    duration: "/ month",
+    price: "₹14,999",
+    duration: "/ quarter",
     tag: "Most Popular",
     description: "The complete package for serious, lasting transformation.",
     features: [
-      "Everything in Kickstart",
+      "Personalised workout plan",
       "Custom meal plan",
-      "2× weekly video calls",
-      "24/7 chat support",
+      "Weekly check-in (WhatsApp)",
+      "2× monthly video calls",
       "Progress photo analysis",
       "Supplement guidance",
     ],
     cta: "Start Transforming",
-    highlight: true,
+    highlight: false,
   },
   {
     name: "Elite",
-    price: "₹18,999",
+    price: "₹14,999",
     duration: "/ month",
     tag: "Premium",
     description: "1-on-1 intensive coaching for maximum, accelerated results.",
@@ -47,11 +31,11 @@ const plans = [
       "Daily check-ins",
       "Live training sessions",
       "Blood work & health analysis",
-      "Competition prep support",
       "Priority 24/7 access",
+      "Nutrition & recovery planning",
     ],
     cta: "Go Elite",
-    highlight: false,
+    highlight: true,
   },
 ];
 
@@ -74,7 +58,7 @@ export default function Plans() {
         </div>
 
         {/* Cards — pt-6 gives room for the absolute tags */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-6 max-w-3xl mx-auto">
           {plans.map((plan) => (
             <div
               key={plan.name}
