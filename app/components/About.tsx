@@ -22,10 +22,16 @@ export default function About() {
 
         {/* Body */}
         <p
-          className="mb-8"
-          style={{ fontSize: "15px", color: "rgba(255,255,255,0.65)", lineHeight: 1.75 }}
+          className="mb-4"
+          style={{ fontSize: "15px", color: "rgba(255,255,255,0.65)", lineHeight: 1.80 }}
         >
-          Unlike generic fitness programs, our coaching focuses on personalized nutrition, structured training, lifestyle optimization, and continuous accountability — helping clients achieve results that last long after the coaching period ends.
+          At FIXYOURBODY, we believe real fitness means training with confidence — not dependency. Our coaching system is built to make you gym-independent: equipped with the knowledge, technique, and discipline to work out effectively on your own terms.
+        </p>
+        <p
+          className="mb-8"
+          style={{ fontSize: "15px", color: "rgba(255,255,255,0.65)", lineHeight: 1.80 }}
+        >
+          We go beyond generic programmes. Every client receives a precision-built approach — personalised nutrition, progressive structured training, lifestyle integration, and continuous accountability — ensuring results don&apos;t fade when the coaching ends. They become your new baseline.
         </p>
 
         {/* Credentials label */}
