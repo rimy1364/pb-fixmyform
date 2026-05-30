@@ -1,10 +1,15 @@
 "use client";
 
 const credentials = [
-  "Certified Nutrition & Fitness Consultant",
-  "Resistant Training Specialist",
-  "8+ Years Coaching Experience",
+  "8+ Years of Coaching Experience",
+  "INFS Certified Nutrition & Fitness Professional",
+  "Resistance Training Specialist (RTS Certified)",
+  "6+ Years with Team Aminder",
+  "Experience Working Alongside FITTR Coaches",
   "500+ Successful Transformations",
+  "Fat Loss & Body Recomposition Specialist",
+  "Muscle Building & Strength Development Coach",
+  "Science-Based Training & Nutrition Coaching",
 ];
 
 export default function About() {
@@ -111,8 +116,8 @@ export default function About() {
               About The Founder
             </div>
 
-            {/* Headline — max 40px, never orphans Bansal alone */}
-            <h2 className="font-black leading-tight mb-5" style={{ fontSize: "clamp(1.8rem, 4vw, 2.5rem)" }}>
+            {/* Headline */}
+            <h2 className="font-black leading-tight mb-1" style={{ fontSize: "clamp(1.8rem, 4vw, 2.5rem)" }}>
               <span style={{ color: "#ffffff", display: "block" }}>Meet</span>
               <span style={{ display: "block" }}>
                 <span style={{ color: "#00d4aa" }}>Prateek </span>
@@ -120,17 +125,27 @@ export default function About() {
               </span>
             </h2>
 
-            {/* Single-sentence body */}
+            {/* Sub-title */}
+            <p className="mb-5" style={{ fontSize: "14px", color: "rgba(255,255,255,0.45)", fontWeight: 500 }}>
+              Founder of FIXYOURBODY
+            </p>
+
+            {/* Body */}
             <p
-              className="mb-7"
+              className="mb-6"
               style={{
-                fontSize: "16px",
-                color: "rgba(255,255,255,0.70)",
-                lineHeight: 1.7,
+                fontSize: "15px",
+                color: "rgba(255,255,255,0.65)",
+                lineHeight: 1.75,
                 maxWidth: "480px",
               }}
             >
-              Prateek founded <strong style={{ color: "#ffffff", fontWeight: 600 }}>FIXYOURBODY</strong> to cut through fitness noise — real coaching, zero gimmicks, results that last.
+              Unlike generic fitness programs, Prateek&apos;s coaching focuses on personalized nutrition, structured training, lifestyle optimization, and continuous accountability — helping clients achieve results that last long after the coaching period ends.
+            </p>
+
+            {/* Credentials label */}
+            <p className="mb-3" style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "0.1em", color: "rgba(255,255,255,0.35)", textTransform: "uppercase" }}>
+              Credentials &amp; Experience
             </p>
 
             {/* Credentials */}
