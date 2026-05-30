@@ -6,6 +6,7 @@ import Transformations from "./components/Transformations";
 import Plans from "./components/Plans";
 import Testimonials from "./components/Testimonials";
 import CTA from "./components/CTA";
+import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
         <Plans />
         <Testimonials />
         <CTA />
+        <Contact />
       </main>
       <Footer />
     </>

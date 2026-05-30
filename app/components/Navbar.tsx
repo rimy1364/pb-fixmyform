@@ -8,6 +8,7 @@ const links = [
   { label: "Transformations", href: "#transformations" },
   { label: "Plans",           href: "#plans" },
   { label: "Testimonials",    href: "#testimonials" },
+  { label: "Contact",         href: "#contact" },
 ];
 
 export default function Navbar() {
@@ -58,9 +59,9 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* Start Now CTA */}
+        {/* Contact Us CTA */}
         <a
-          href="#plans"
+          href="#contact"
           className="hidden md:block font-bold hover:opacity-90 transition-opacity"
           style={{
             background: "#00d4aa",
@@ -71,7 +72,7 @@ export default function Navbar() {
             fontWeight: 700,
           }}
         >
-          Start Now
+          Contact Us
         </a>
 
         {/* Mobile hamburger */}
@@ -102,12 +103,12 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="#plans"
+              href="#contact"
               onClick={() => setOpen(false)}
               className="mt-4 py-3 text-center font-bold rounded-full"
               style={{ background: "#00d4aa", color: "#0a0f1d", fontSize: "14px" }}
             >
-              Start Now
+              Contact Us
             </a>
           </nav>
         </div>
