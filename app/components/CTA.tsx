@@ -25,8 +25,7 @@ export default function CTA() {
             </h2>
 
             <p className="text-gray-400 text-sm sm:text-base mb-8 max-w-xl mx-auto leading-relaxed">
-              Stop waiting for the &quot;right time.&quot; Start your transformation today
-              with a personalised plan from Prateek Bansal.
+              Stop waiting for the &quot;right time.&quot; Start your transformation today.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -41,7 +40,7 @@ export default function CTA() {
                 href="#plans"
                 className="px-8 py-3.5 rounded-full border-2 border-white/70 text-white font-bold text-sm hover:bg-white/10 hover:border-white transition-colors text-center"
               >
-                View All Plans
+                View Plans
               </a>
             </div>
 
