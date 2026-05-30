@@ -70,13 +70,13 @@ export default function Testimonials() {
           </p>
         </div>
 
-        {/* Cards — horizontal scroll on mobile, grid on desktop */}
-        <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 overflow-x-auto md:overflow-visible pb-4 md:pb-0 snap-x snap-mandatory md:snap-none scroll-smooth -mx-5 px-5 md:mx-0 md:px-0">
+        {/* Cards — horizontal scroll on all screen sizes */}
+        <div className="flex gap-5 overflow-x-auto pb-4 snap-x snap-mandatory scroll-smooth -mx-5 px-5 scrollbar-hide">
           {testimonials.map((t, i) => (
             <div
               key={i}
               className="rounded-2xl p-6 bg-[#0D1528] border border-white/10 hover:border-[#00C2FF]/30 transition-all duration-300 flex flex-col flex-shrink-0 snap-start"
-              style={{ minWidth: "min(80vw, 320px)" }}
+              style={{ width: "clamp(280px, 80vw, 340px)" }}
             >
               {/* Stars */}
               <div className="flex gap-1 mb-4">

@@ -43,6 +43,10 @@ body {
   box-shadow: 0 0 20px rgba(0, 194, 255, 0.2);
 }
 
+/* Hide scrollbar on carousel rows but keep scroll functional */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
