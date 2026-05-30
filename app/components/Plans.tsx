@@ -6,7 +6,7 @@ const plans = [
   {
     name: "Transform",
     price: "₹14,999",
-    duration: "/ quarter",
+    duration: "/ 3 months",
     tag: "Most Popular",
     description: "The complete package for serious, lasting transformation.",
     features: [
