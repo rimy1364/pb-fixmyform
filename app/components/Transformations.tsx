@@ -82,7 +82,7 @@ export default function Transformations() {
                 )}
                 {/* Result badge */}
                 <div
-                  className="absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-black whitespace-nowrap"
+                  className="absolute top-4 right-4 px-4 py-1.5 rounded-full text-xs font-black whitespace-nowrap"
                   style={{ background: "#00d4aa", color: "#080f1d" }}
                 >
                   {t.result}
