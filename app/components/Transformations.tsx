@@ -89,25 +89,23 @@ export default function Transformations() {
                   {t.result}
                 </div>
 
-                {/* Floating weight buttons at bottom */}
+                {/* Floating weight pills at bottom */}
                 {(t.weightBefore || t.weightAfter) && (
                   <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-3 px-4">
                     {t.weightBefore && (
                       <div
-                        className="flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold"
+                        className="px-4 py-2 rounded-full text-xs font-bold"
                         style={{ background: "rgba(0,0,0,0.65)", backdropFilter: "blur(8px)", border: "1px solid rgba(255,255,255,0.15)", color: "rgba(255,255,255,0.85)" }}
                       >
-                        <span style={{ color: "rgba(255,255,255,0.45)", fontSize: "10px" }}>BEFORE</span>
-                        <span>{t.weightBefore}</span>
+                        {t.weightBefore}
                       </div>
                     )}
                     {t.weightAfter && (
                       <div
-                        className="flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold"
+                        className="px-4 py-2 rounded-full text-xs font-bold"
                         style={{ background: "rgba(0,212,170,0.20)", backdropFilter: "blur(8px)", border: "1px solid rgba(0,212,170,0.50)", color: "#00d4aa" }}
                       >
-                        <span style={{ color: "rgba(0,212,170,0.60)", fontSize: "10px" }}>AFTER</span>
-                        <span>{t.weightAfter}</span>
+                        {t.weightAfter}
                       </div>
                     )}
                   </div>
