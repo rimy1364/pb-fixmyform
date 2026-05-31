@@ -62,10 +62,10 @@ export default function Transformations() {
               style={{ background: "#0a1628", border: "1px solid rgba(255,255,255,0.08)" }}
             >
               {/* Image area */}
-              <div className="relative overflow-hidden" style={{ background: "#080f1d", height: "260px" }}>
+              <div className="relative overflow-hidden" style={{ background: "#080f1d", height: "420px" }}>
                 {t.image ? (
                   // eslint-disable-next-line @next/next/no-img-element
-                  <img src={t.image} alt="Transformation" className="w-full h-full object-cover object-top" />
+                  <img src={t.image} alt="Transformation" className="w-full h-full object-contain" />
                 ) : (
                   <div className="w-full h-full flex flex-col items-center justify-center gap-2">
                     <div className="flex gap-6">
