@@ -4,12 +4,12 @@ import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const transformations = [
-  { name: "Client",    duration: "12 Weeks", result: "-18 kg",       description: "Lost 18kg while maintaining muscle and energy for 12-hour work shifts.", image: "/transform1.jpg" },
-  { name: "Sneha P.",  duration: "16 Weeks", result: "-14 kg",       description: "Postpartum fat loss journey — regained her confidence and strength.",    image: null },
-  { name: "Arjun K.",  duration: "8 Weeks",  result: "+6 kg muscle", description: "Skinny-to-muscular lean bulk — first time seeing visible abs.",           image: null },
-  { name: "Divya R.",  duration: "12 Weeks", result: "-12 kg",       description: "From zero gym experience to a complete body recomposition.",               image: null },
-  { name: "Vikram S.", duration: "20 Weeks", result: "-22 kg",       description: "Reversed pre-diabetes markers alongside a 22kg transformation.",           image: null },
-  { name: "Priya T.",  duration: "10 Weeks", result: "-10 kg",       description: "Wedding prep transformation — achieved her dream look in 10 weeks.",       image: null },
+  { name: "Client",    duration: "12 Weeks", result: "-18 kg", weightBefore: "105 kg", weightAfter: "87 kg",  description: "Lost 18kg while maintaining muscle and energy for 12-hour work shifts.", image: "/transform1.jpg" },
+  { name: "Sneha P.",  duration: "16 Weeks", result: "-14 kg", weightBefore: null,      weightAfter: null,      description: "Postpartum fat loss journey — regained her confidence and strength.",    image: null },
+  { name: "Arjun K.",  duration: "8 Weeks",  result: "+6 kg",  weightBefore: null,      weightAfter: null,      description: "Skinny-to-muscular lean bulk — first time seeing visible abs.",           image: null },
+  { name: "Divya R.",  duration: "12 Weeks", result: "-12 kg", weightBefore: null,      weightAfter: null,      description: "From zero gym experience to a complete body recomposition.",               image: null },
+  { name: "Vikram S.", duration: "20 Weeks", result: "-22 kg", weightBefore: null,      weightAfter: null,      description: "Reversed pre-diabetes markers alongside a 22kg transformation.",           image: null },
+  { name: "Priya T.",  duration: "10 Weeks", result: "-10 kg", weightBefore: null,      weightAfter: null,      description: "Wedding prep transformation — achieved her dream look in 10 weeks.",       image: null },
 ];
 
 const VISIBLE = 2;
@@ -61,8 +61,8 @@ export default function Transformations() {
               className="relative rounded-2xl overflow-hidden transition-all duration-300"
               style={{ background: "#0a1628", border: "1px solid rgba(255,255,255,0.08)" }}
             >
-              {/* Image area */}
-              <div className="relative overflow-hidden" style={{ background: "#080f1d", height: "420px", paddingTop: "16px" }}>
+              {/* Image area — flush to card edges horizontally */}
+              <div className="relative overflow-hidden" style={{ background: "#080f1d", height: "420px", paddingTop: "12px", paddingLeft: "4px", paddingRight: "4px" }}>
                 {t.image ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img src={t.image} alt="Transformation" className="w-full h-full object-contain" />
@@ -80,6 +80,7 @@ export default function Transformations() {
                     </div>
                   </div>
                 )}
+
                 {/* Result badge */}
                 <div
                   className="absolute top-4 right-4 px-4 py-1.5 rounded-full text-xs font-black whitespace-nowrap"
@@ -87,6 +88,30 @@ export default function Transformations() {
                 >
                   {t.result}
                 </div>
+
+                {/* Floating weight buttons at bottom */}
+                {(t.weightBefore || t.weightAfter) && (
+                  <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-3 px-4">
+                    {t.weightBefore && (
+                      <div
+                        className="flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold"
+                        style={{ background: "rgba(0,0,0,0.65)", backdropFilter: "blur(8px)", border: "1px solid rgba(255,255,255,0.15)", color: "rgba(255,255,255,0.85)" }}
+                      >
+                        <span style={{ color: "rgba(255,255,255,0.45)", fontSize: "10px" }}>BEFORE</span>
+                        <span>{t.weightBefore}</span>
+                      </div>
+                    )}
+                    {t.weightAfter && (
+                      <div
+                        className="flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold"
+                        style={{ background: "rgba(0,212,170,0.20)", backdropFilter: "blur(8px)", border: "1px solid rgba(0,212,170,0.50)", color: "#00d4aa" }}
+                      >
+                        <span style={{ color: "rgba(0,212,170,0.60)", fontSize: "10px" }}>AFTER</span>
+                        <span>{t.weightAfter}</span>
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
 
               {/* Info */}
