@@ -4,12 +4,12 @@ import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const transformations = [
-  { name: "Rahul M.",  duration: "12 Weeks", result: "-18 kg",       description: "Lost 18kg while maintaining muscle and energy for 12-hour work shifts." },
-  { name: "Sneha P.",  duration: "16 Weeks", result: "-14 kg",       description: "Postpartum fat loss journey — regained her confidence and strength." },
-  { name: "Arjun K.",  duration: "8 Weeks",  result: "+6 kg muscle", description: "Skinny-to-muscular lean bulk — first time seeing visible abs." },
-  { name: "Divya R.",  duration: "12 Weeks", result: "-12 kg",       description: "From zero gym experience to a complete body recomposition." },
-  { name: "Vikram S.", duration: "20 Weeks", result: "-22 kg",       description: "Reversed pre-diabetes markers alongside a 22kg transformation." },
-  { name: "Priya T.",  duration: "10 Weeks", result: "-10 kg",       description: "Wedding prep transformation — achieved her dream look in 10 weeks." },
+  { name: "Client",    duration: "12 Weeks", result: "-18 kg",       description: "Lost 18kg while maintaining muscle and energy for 12-hour work shifts.", before: "/before1.jpg", after: "/after1.jpg" },
+  { name: "Sneha P.",  duration: "16 Weeks", result: "-14 kg",       description: "Postpartum fat loss journey — regained her confidence and strength.",   before: null, after: null },
+  { name: "Arjun K.",  duration: "8 Weeks",  result: "+6 kg muscle", description: "Skinny-to-muscular lean bulk — first time seeing visible abs.",          before: null, after: null },
+  { name: "Divya R.",  duration: "12 Weeks", result: "-12 kg",       description: "From zero gym experience to a complete body recomposition.",              before: null, after: null },
+  { name: "Vikram S.", duration: "20 Weeks", result: "-22 kg",       description: "Reversed pre-diabetes markers alongside a 22kg transformation.",          before: null, after: null },
+  { name: "Priya T.",  duration: "10 Weeks", result: "-10 kg",       description: "Wedding prep transformation — achieved her dream look in 10 weeks.",      before: null, after: null },
 ];
 
 const VISIBLE = 2;
@@ -62,19 +62,39 @@ export default function Transformations() {
               style={{ background: "#0a1628", border: "1px solid rgba(255,255,255,0.08)" }}
             >
               {/* Before / After area */}
-              <div className="relative h-44 flex" style={{ background: "#080f1d" }}>
-                <div className="flex-1 flex items-center justify-center" style={{ borderRight: "1px solid rgba(255,255,255,0.08)" }}>
-                  <div className="text-center">
-                    <div className="w-12 h-12 rounded-full mx-auto mb-1 flex items-center justify-center text-xl" style={{ background: "rgba(255,255,255,0.04)" }}>📸</div>
-                    <span className="text-xs uppercase tracking-widest" style={{ color: "rgba(255,255,255,0.30)" }}>Before</span>
-                  </div>
+              <div className="relative h-56 flex" style={{ background: "#080f1d" }}>
+                {/* Before */}
+                <div className="flex-1 relative overflow-hidden" style={{ borderRight: "1px solid rgba(255,255,255,0.08)" }}>
+                  {t.before ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img src={t.before} alt="Before" className="w-full h-full object-cover object-top" />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center">
+                      <div className="text-center">
+                        <div className="w-12 h-12 rounded-full mx-auto mb-1 flex items-center justify-center text-xl" style={{ background: "rgba(255,255,255,0.04)" }}>📸</div>
+                        <span className="text-xs uppercase tracking-widest" style={{ color: "rgba(255,255,255,0.30)" }}>Before</span>
+                      </div>
+                    </div>
+                  )}
+                  <span className="absolute bottom-2 left-1/2 -translate-x-1/2 text-xs uppercase tracking-widest px-2 py-0.5 rounded" style={{ background: "rgba(0,0,0,0.55)", color: "rgba(255,255,255,0.60)" }}>Before</span>
                 </div>
-                <div className="flex-1 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-12 h-12 rounded-full mx-auto mb-1 flex items-center justify-center text-xl" style={{ background: "rgba(0,212,170,0.08)" }}>💪</div>
-                    <span className="text-xs uppercase tracking-widest" style={{ color: "#00d4aa" }}>After</span>
-                  </div>
+
+                {/* After */}
+                <div className="flex-1 relative overflow-hidden">
+                  {t.after ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img src={t.after} alt="After" className="w-full h-full object-cover object-top" />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center">
+                      <div className="text-center">
+                        <div className="w-12 h-12 rounded-full mx-auto mb-1 flex items-center justify-center text-xl" style={{ background: "rgba(0,212,170,0.08)" }}>💪</div>
+                        <span className="text-xs uppercase tracking-widest" style={{ color: "#00d4aa" }}>After</span>
+                      </div>
+                    </div>
+                  )}
+                  <span className="absolute bottom-2 left-1/2 -translate-x-1/2 text-xs uppercase tracking-widest px-2 py-0.5 rounded" style={{ background: "rgba(0,0,0,0.55)", color: "#00d4aa" }}>After</span>
                 </div>
+
                 {/* Result badge */}
                 <div
                   className="absolute top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full text-xs font-black whitespace-nowrap"
