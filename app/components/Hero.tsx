@@ -75,7 +75,7 @@ export default function Hero() {
             lineHeight: 1.6,
           }}
         >
-          500+ Lives transformed. Science-backed. Real Results.
+          A complete coaching system combining customised diet plans, personalised workout programming, and science-backed form correction to help you achieve sustainable, long-term results.
         </p>
 
         {/* 36px gap then CTAs */}

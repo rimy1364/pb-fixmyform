@@ -7,6 +7,7 @@ const credentials = [
   "500+ Successful Transformations",
   "Fat Loss & Body Recomposition Specialists",
   "Muscle Building & Strength Development Coaches",
+  "Form Correction & Injury Prevention Experts",
 ];
 
 export default function About() {
@@ -25,13 +26,19 @@ export default function About() {
           className="mb-4"
           style={{ fontSize: "15px", color: "rgba(255,255,255,0.65)", lineHeight: 1.80 }}
         >
-          At FIXYOURBODY, we believe real fitness means training with confidence — not dependency. Our coaching system is built to make you trainer-independent: equipped with the knowledge, technique, and discipline to work out effectively on your own terms.
+          At Fix Your Body, we believe real fitness means building confidence, not dependency. Our coaching system is built to make you trainer-independent: equipped with the knowledge, technique, and discipline to work out effectively on your own terms.
+        </p>
+        <p
+          className="mb-4"
+          style={{ fontSize: "15px", color: "rgba(255,255,255,0.65)", lineHeight: 1.80 }}
+        >
+          We specialise in coaching busy professionals—executives, engineers, and entrepreneurs—through personalised nutrition, customised training plans, and expert form correction that fit seamlessly into demanding schedules.
         </p>
         <p
           className="mb-8"
           style={{ fontSize: "15px", color: "rgba(255,255,255,0.65)", lineHeight: 1.80 }}
         >
-          We don&apos;t do one-size-fits-all. Every client gets a plan built around them — the right nutrition, the right training, and constant support — so the results stick well beyond the coaching period.
+          Our team brings experience from leading fitness organisations like Fittr and Team Aminder, combining proven coaching methods with evidence-based practices to deliver lasting transformations.
         </p>
 
         {/* Credentials label */}
