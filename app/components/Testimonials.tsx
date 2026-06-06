@@ -48,7 +48,6 @@ const testimonials = [
   },
 ];
 
-const VISIBLE = 2;
 const TOTAL = testimonials.length;
 
 export default function Testimonials() {
@@ -57,8 +56,7 @@ export default function Testimonials() {
   const prev = () => setCurrent((c) => (c - 1 + TOTAL) % TOTAL);
   const next = () => setCurrent((c) => (c + 1) % TOTAL);
 
-  const getVisible = () =>
-    Array.from({ length: VISIBLE }, (_, i) => testimonials[(current + i) % TOTAL]);
+  const t = testimonials[current];
 
   return (
     <section id="testimonials" className="pt-20 pb-16 px-5 relative overflow-hidden">
@@ -95,16 +93,12 @@ export default function Testimonials() {
           </p>
         </div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">
-          {getVisible().map((t, i) => (
+        {/* Card */}
+        <div className="flex justify-center mb-8">
+          <div className="w-full max-w-md">
             <div
-              key={`${t.name}-${i}`}
               className="rounded-2xl p-6 flex flex-col transition-all duration-300"
-              style={{
-                background: "#0D1528",
-                border: "1px solid rgba(255,255,255,0.10)",
-              }}
+              style={{ background: "#0D1528", border: "1px solid rgba(255,255,255,0.10)" }}
             >
               {/* Stars */}
               <div className="flex gap-1 mb-4">
@@ -132,7 +126,7 @@ export default function Testimonials() {
                 </div>
               </div>
             </div>
-          ))}
+          </div>
         </div>
 
         {/* Controls — matching Transformations style */}

@@ -4,8 +4,8 @@ import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const transformations = [
-  { name: "Client",    duration: "12 Weeks", result: "-18 kg", weightBefore: "105 kg", weightAfter: "87 kg",  description: "Lost 18kg while maintaining muscle and energy for 12-hour work shifts.", image: "/transform1.jpg" },
-  { name: "Sneha P.",  duration: "16 Weeks", result: "-14 kg", weightBefore: null,      weightAfter: null,      description: "Postpartum fat loss journey — regained her confidence and strength.",    image: null },
+  { name: "Client",    duration: "12 Weeks", result: "-18 kg", weightBefore: "105 kg", weightAfter: "87 kg",  description: "Lost 18kg while maintaining muscle and energy for 12-hour work shifts.", image: "/image1.jpeg" },
+  { name: "Sneha P.",  duration: "16 Weeks", result: "-14 kg", weightBefore: null,      weightAfter: null,      description: "Postpartum fat loss journey — regained her confidence and strength.",    image: "/image2.jpeg" },
   { name: "Arjun K.",  duration: "8 Weeks",  result: "+6 kg",  weightBefore: null,      weightAfter: null,      description: "Skinny-to-muscular lean bulk — first time seeing visible abs.",           image: null },
   { name: "Divya R.",  duration: "12 Weeks", result: "-12 kg", weightBefore: null,      weightAfter: null,      description: "From zero gym experience to a complete body recomposition.",               image: null },
   { name: "Vikram S.", duration: "20 Weeks", result: "-22 kg", weightBefore: null,      weightAfter: null,      description: "Reversed pre-diabetes markers alongside a 22kg transformation.",           image: null },
