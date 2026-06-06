@@ -66,12 +66,17 @@ export default function Plans() {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-6 max-w-3xl mx-auto">
+        <div
+          className="flex overflow-x-auto gap-4 pt-6 pb-4 -mx-6 px-6 md:mx-auto md:grid md:grid-cols-2 md:overflow-x-visible md:max-w-3xl md:px-0"
+          style={{ scrollSnapType: "x mandatory" }}
+        >
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className="relative rounded-2xl p-6 flex flex-col transition-all duration-300"
+              className="relative rounded-2xl p-6 flex flex-col transition-all duration-300 flex-shrink-0 md:flex-shrink"
               style={{
+                minWidth: "72vw",
+                scrollSnapAlign: "start",
                 background: plan.highlight ? "rgba(0,212,170,0.06)" : "#0a1628",
                 border: plan.highlight ? "2px solid rgba(0,212,170,0.60)" : "1px solid rgba(255,255,255,0.08)",
                 boxShadow: plan.highlight ? "0 0 40px rgba(0,212,170,0.12)" : "none",
