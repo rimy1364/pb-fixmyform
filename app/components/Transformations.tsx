@@ -16,10 +16,12 @@ const TOTAL = transformations.length;
 
 export default function Transformations() {
   const [current, setCurrent] = useState(0);
-  const prev = () => setCurrent((c) => (c - 1 + TOTAL) % TOTAL);
-  const next = () => setCurrent((c) => (c + 1) % TOTAL);
-  const getVisible = () => [transformations[current]];
+  const [animKey, setAnimKey] = useState(0);
+  const [slideFrom, setSlideFrom] = useState<"right" | "left">("right");
 
+  const prev = () => { setSlideFrom("left"); setCurrent((c) => (c - 1 + TOTAL) % TOTAL); setAnimKey((k) => k + 1); };
+  const next = () => { setSlideFrom("right"); setCurrent((c) => (c + 1) % TOTAL); setAnimKey((k) => k + 1); };
+  const goTo = (i: number) => { setSlideFrom(i > current ? "right" : "left"); setCurrent(i); setAnimKey((k) => k + 1); };
   const touchStartX = useRef<number | null>(null);
   const handleTouchStart = (e: React.TouchEvent) => { touchStartX.current = e.touches[0].clientX; };
   const handleTouchEnd = (e: React.TouchEvent) => {
@@ -32,6 +34,10 @@ export default function Transformations() {
 
   return (
     <section id="transformations" className="pt-20 pb-14 px-6 relative overflow-hidden" style={{ background: "#0d1a2e" }}>
+      <style>{`
+        @keyframes slideInRight { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+        @keyframes slideInLeft  { from { transform: translateX(-100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+      `}</style>
       {/* Top/bottom divider lines */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "linear-gradient(to right, transparent, rgba(0,212,170,0.25), transparent)" }} />
@@ -64,11 +70,12 @@ export default function Transformations() {
 
         {/* Cards */}
         <div className="flex justify-center mb-6">
-          <div className="w-full max-w-md">
-          {(() => { const t = getVisible()[0]; return (
+          <div className="w-full max-w-md overflow-hidden">
+          {(() => { const t = transformations[current]; return (
             <div
-              className="relative rounded-2xl overflow-hidden transition-all duration-300"
-              style={{ background: "#0a1628", border: "1px solid rgba(255,255,255,0.08)" }}
+              key={animKey}
+              className="relative rounded-2xl overflow-hidden"
+              style={{ background: "#0a1628", border: "1px solid rgba(255,255,255,0.08)", animation: `${slideFrom === "right" ? "slideInRight" : "slideInLeft"} 0.35s ease` }}
               onTouchStart={handleTouchStart}
               onTouchEnd={handleTouchEnd}
             >
@@ -156,7 +163,7 @@ export default function Transformations() {
             {Array.from({ length: TOTAL }).map((_, i) => (
               <button
                 key={i}
-                onClick={() => setCurrent(i)}
+                onClick={() => goTo(i)}
                 className="rounded-full transition-all duration-300"
                 style={{
                   height: "8px", width: i === current ? "24px" : "8px",
