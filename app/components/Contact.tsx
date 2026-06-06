@@ -31,7 +31,7 @@ export default function Contact() {
             Get In Touch
           </div>
           <h2 className="font-black text-white" style={{ fontSize: "clamp(1.8rem, 4vw, 2.6rem)" }}>
-            Ready to Fix <span style={{ color: "#00d4aa" }}>Your Body</span>
+            Ready to Fix <span style={{ color: "#00d4aa" }}>Your Body?</span>
           </h2>
           <p style={{ fontSize: "15px", color: "rgba(255,255,255,0.50)", marginTop: "10px" }}>
             Choose how you&apos;d like to connect with us.
