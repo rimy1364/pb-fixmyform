@@ -197,58 +197,7 @@ export default function Contact() {
             </span>
           </div>
 
-          {/* 3 — Consultation Call */}
-          <div
-            className="flex flex-col items-center text-center rounded-2xl p-8 transition-all duration-300 hover:scale-[1.02] cursor-pointer"
-            style={{
-              background: "#0a1628",
-              border: "1.5px solid rgba(0,212,170,0.25)",
-            }}
-            onClick={() => alert("Payment integration coming soon — ₹99 consultation call with Prateek.")}
-          >
-            {/* Call icon */}
-            <div
-              className="flex items-center justify-center mb-5"
-              style={{
-                width: "64px",
-                height: "64px",
-                borderRadius: "50%",
-                background: "rgba(0,212,170,0.10)",
-                border: "1.5px solid rgba(0,212,170,0.30)",
-              }}
-            >
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00d4aa" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.13 6.13l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-              </svg>
-            </div>
-
-            <h3 className="font-bold text-white mb-2" style={{ fontSize: "17px" }}>
-              Book a Consultation Call
-            </h3>
-            <p style={{ fontSize: "13px", color: "rgba(255,255,255,0.50)", lineHeight: 1.6, marginBottom: "20px" }}>
-              15-mins 1-on-1 call with our expert to understand your goals and map out a plan.
-            </p>
-
-            <div className="mt-auto w-full">
-              <div style={{ fontSize: "11px", color: "rgba(255,255,255,0.40)", marginBottom: "8px" }}>
-                One-time fee
-              </div>
-              <button
-                className="w-full font-bold transition-opacity hover:opacity-90"
-                style={{
-                  background: "#00d4aa",
-                  color: "#0a0f1e",
-                  borderRadius: "999px",
-                  padding: "10px 24px",
-                  fontSize: "13px",
-                  fontWeight: 700,
-                  cursor: "pointer",
-                }}
-              >
-                Book for ₹99 →
-              </button>
-            </div>
-          </div>
+          {/* 3 — Consultation Call (hidden, activate later) */}
 
           {/* 4 — Instagram DM */}
           <a
