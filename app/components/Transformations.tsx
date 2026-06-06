@@ -4,12 +4,12 @@ import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const transformations = [
-  { name: "Client",    duration: "12 Weeks", result: "-18 kg", weightBefore: "105 kg", weightAfter: "87 kg",  description: "Lost 18kg while maintaining muscle and energy for 12-hour work shifts.", image: "/image1.jpeg" },
-  { name: "Sneha P.",  duration: "16 Weeks", result: "-14 kg", weightBefore: null,      weightAfter: null,      description: "Postpartum fat loss journey — regained her confidence and strength.",    image: "/image2.jpeg" },
-  { name: "Arjun K.",  duration: "8 Weeks",  result: "+6 kg",  weightBefore: null,      weightAfter: null,      description: "Skinny-to-muscular lean bulk — first time seeing visible abs.",           image: "/image3.jpeg" },
-  { name: "Divya R.",  duration: "12 Weeks", result: "-12 kg", weightBefore: null,      weightAfter: null,      description: "From zero gym experience to a complete body recomposition.",               image: "/image4.jpeg" },
-  { name: "Vikram S.", duration: "20 Weeks", result: "-22 kg", weightBefore: null,      weightAfter: null,      description: "Reversed pre-diabetes markers alongside a 22kg transformation.",           image: "/image5.jpeg" },
-  { name: "Priya T.",  duration: "10 Weeks", result: "-10 kg", weightBefore: null,      weightAfter: null,      description: "Wedding prep transformation — achieved her dream look in 10 weeks.",       image: null },
+  { name: "Client",    duration: "12 Weeks", result: "-18 kg", weightBefore: "100 kg", weightAfter: "90 kg",  description: "Lost 18kg while maintaining muscle and energy for 12-hour work shifts.", image: "/image1.jpeg" },
+  { name: "Sneha P.",  duration: "16 Weeks", result: "-14 kg", weightBefore: "100 kg", weightAfter: "90 kg",  description: "Postpartum fat loss journey — regained her confidence and strength.",    image: "/image2.jpeg" },
+  { name: "Arjun K.",  duration: "8 Weeks",  result: "+6 kg",  weightBefore: "100 kg", weightAfter: "90 kg",  description: "Skinny-to-muscular lean bulk — first time seeing visible abs.",           image: "/image3.jpeg" },
+  { name: "Divya R.",  duration: "12 Weeks", result: "-12 kg", weightBefore: "100 kg", weightAfter: "90 kg",  description: "From zero gym experience to a complete body recomposition.",               image: "/image4.jpeg" },
+  { name: "Vikram S.", duration: "20 Weeks", result: "-22 kg", weightBefore: "100 kg", weightAfter: "90 kg",  description: "Reversed pre-diabetes markers alongside a 22kg transformation.",           image: "/image5.jpeg" },
+  { name: "Priya T.",  duration: "10 Weeks", result: "-10 kg", weightBefore: "100 kg", weightAfter: "90 kg",  description: "Wedding prep transformation — achieved her dream look in 10 weeks.",       image: null },
 ];
 
 const TOTAL = transformations.length;
