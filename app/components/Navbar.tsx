@@ -32,13 +32,10 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
 
-        {/* Logo — FIX white · YOUR teal · BODY white */}
+        {/* Logo */}
         <a href="#" className="flex items-center">
-          <span style={{ fontSize: "18px", fontWeight: 900, letterSpacing: "-0.5px" }}>
-            <span style={{ color: "#ffffff" }}>FIX</span>
-            <span style={{ color: "#00d4aa" }}>YOUR</span>
-            <span style={{ color: "#ffffff" }}>BODY</span>
-          </span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo.png" alt="Fix Your Body" style={{ height: "44px", width: "44px", objectFit: "contain", borderRadius: "50%" }} />
         </a>
 
         {/* Desktop nav */}
