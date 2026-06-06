@@ -1,77 +1,14 @@
 "use client";
 
-import { useState } from "react";
-
-// ── REPLACE THESE WITH YOUR REAL VALUES ──────────────────────────────────────
 const WHATSAPP_NUMBER   = "919205802858";
 const WHATSAPP_MESSAGE  = "Hi Prateek, I am interested in FIXYOURBODY coaching. Can we connect?";
-const ENQUIRY_FORM_URL  = "https://pbenquiryform1.vercel.app/";
+const ENQUIRY_FORM_URL  = "https://docs.google.com/forms/d/e/1FAIpQLSdfByh_JqHdmSuRUuEphgbFe-Bf2ZvoGIto910Rn-9bDFqseQ/viewform";
 const INSTAGRAM_HANDLE  = "fixyourbody__";
-// ─────────────────────────────────────────────────────────────────────────────
 
 const waLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
 export default function Contact() {
-  const [formOpen, setFormOpen] = useState(false);
-
   return (
-    <>
-      {/* ── Enquiry Form Modal ── */}
-      {formOpen && (
-        <div
-          className="fixed inset-0 z-[100] flex items-center justify-center p-4"
-          style={{ background: "rgba(0,0,0,0.75)", backdropFilter: "blur(6px)" }}
-          onClick={() => setFormOpen(false)}
-        >
-          <div
-            className="relative w-full flex flex-col"
-            style={{
-              maxWidth: "680px",
-              height: "85vh",
-              background: "#0d1a2e",
-              border: "1.5px solid rgba(0,212,170,0.30)",
-              borderRadius: "20px",
-              overflow: "hidden",
-            }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Modal header */}
-            <div
-              className="flex items-center justify-between px-6 py-4 flex-shrink-0"
-              style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}
-            >
-              <span style={{ fontSize: "15px", fontWeight: 700, color: "#ffffff" }}>
-                Enquiry Form
-              </span>
-              <button
-                onClick={() => setFormOpen(false)}
-                className="flex items-center justify-center hover:opacity-70 transition-opacity"
-                style={{
-                  width: "32px", height: "32px",
-                  borderRadius: "50%",
-                  background: "rgba(255,255,255,0.08)",
-                  border: "none",
-                  color: "#ffffff",
-                  fontSize: "18px",
-                  cursor: "pointer",
-                  lineHeight: 1,
-                }}
-              >
-                ✕
-              </button>
-            </div>
-
-            {/* iframe */}
-            <iframe
-              src={ENQUIRY_FORM_URL}
-              className="flex-1 w-full"
-              style={{ border: "none" }}
-              title="Enquiry Form"
-            />
-          </div>
-        </div>
-      )}
-
     <section id="contact" className="pt-20 pb-16 px-5" style={{ background: "#0d1a2e" }}>
       <div className="max-w-5xl mx-auto">
 
@@ -153,10 +90,12 @@ export default function Contact() {
           </a>
 
           {/* 2 — Enquiry Form */}
-          <div
-            className="group flex flex-col items-center text-center rounded-2xl p-8 transition-all duration-300 hover:scale-[1.02] cursor-pointer"
-            style={{ background: "#0a1628", border: "1.5px solid rgba(0,212,170,0.25)" }}
-            onClick={() => setFormOpen(true)}
+          <a
+            href={ENQUIRY_FORM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex flex-col items-center text-center rounded-2xl p-8 transition-all duration-300 hover:scale-[1.02]"
+            style={{ background: "#0a1628", border: "1.5px solid rgba(0,212,170,0.25)", textDecoration: "none" }}
           >
             {/* Form icon */}
             <div
@@ -195,7 +134,7 @@ export default function Contact() {
             >
               Fill Form →
             </span>
-          </div>
+          </a>
 
           {/* 3 — Consultation Call (hidden, activate later) */}
 
@@ -261,6 +200,5 @@ export default function Contact() {
         </div>
       </div>
     </section>
-    </>
   );
 }
