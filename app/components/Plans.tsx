@@ -8,6 +8,9 @@ const plans = [
     price: "₹14,999",
     duration: "/ 3 months",
     tag: "Most Popular",
+    bestValue: true,
+    valueLine: "That's just ₹4,999/month",
+    subLine: null,
     description: "The complete package for serious, lasting transformation.",
     features: [
       "Personalised workout plan",
@@ -24,6 +27,9 @@ const plans = [
     price: "₹14,999",
     duration: "/ month",
     tag: "Premium",
+    bestValue: false,
+    valueLine: null,
+    subLine: "Intensive 1-on-1, faster results",
     description: "1-on-1 intensive coaching for maximum, accelerated results.",
     features: [
       "Daily 1-on-1 video coaching",
@@ -89,13 +95,26 @@ export default function Plans() {
 
               {/* Plan info */}
               <div className="mb-4">
-                <h3 className="text-lg font-black text-white mb-1">{plan.name}</h3>
-                <div className="flex items-baseline gap-1 mb-2">
+                <div className="flex items-center gap-2 mb-1">
+                  <h3 className="text-lg font-black text-white">{plan.name}</h3>
+                  {plan.bestValue && (
+                    <span className="text-xs font-bold px-2 py-0.5 rounded-full" style={{ background: "rgba(0,212,170,0.15)", color: "#00d4aa", border: "1px solid rgba(0,212,170,0.30)" }}>
+                      Best value
+                    </span>
+                  )}
+                </div>
+                <div className="flex items-baseline gap-1 mb-1">
                   <span className="text-3xl font-black" style={{ color: plan.highlight ? "#00d4aa" : "#ffffff" }}>
                     {plan.price}
                   </span>
                   <span className="text-sm" style={{ color: "rgba(255,255,255,0.40)" }}>{plan.duration}</span>
                 </div>
+                {plan.valueLine && (
+                  <p className="mb-1" style={{ fontSize: "13px", color: "#00d4aa", fontWeight: 600 }}>{plan.valueLine}</p>
+                )}
+                {plan.subLine && (
+                  <p className="mb-1" style={{ fontSize: "13px", color: "rgba(255,255,255,0.45)" }}>{plan.subLine}</p>
+                )}
                 <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.50)" }}>{plan.description}</p>
               </div>
 
