@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const transformations = [
@@ -19,6 +19,16 @@ export default function Transformations() {
   const prev = () => setCurrent((c) => (c - 1 + TOTAL) % TOTAL);
   const next = () => setCurrent((c) => (c + 1) % TOTAL);
   const getVisible = () => [transformations[current]];
+
+  const touchStartX = useRef<number | null>(null);
+  const handleTouchStart = (e: React.TouchEvent) => { touchStartX.current = e.touches[0].clientX; };
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const diff = touchStartX.current - e.changedTouches[0].clientX;
+    if (diff > 50) next();
+    else if (diff < -50) prev();
+    touchStartX.current = null;
+  };
 
   return (
     <section id="transformations" className="pt-20 pb-14 px-6 relative overflow-hidden" style={{ background: "#0d1a2e" }}>
@@ -59,6 +69,8 @@ export default function Transformations() {
             <div
               className="relative rounded-2xl overflow-hidden transition-all duration-300"
               style={{ background: "#0a1628", border: "1px solid rgba(255,255,255,0.08)" }}
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
             >
               {/* Image area — flush to card edges horizontally */}
               <div className="relative overflow-hidden" style={{ background: "#080f1d", height: "420px", paddingTop: "12px", paddingLeft: "4px", paddingRight: "4px" }}>
