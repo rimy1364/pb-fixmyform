@@ -26,7 +26,7 @@ export default function About() {
           className="mb-4"
           style={{ fontSize: "15px", color: "rgba(255,255,255,0.65)", lineHeight: 1.80 }}
         >
-          At Fix Your Body, we believe real fitness means building confidence, not dependency. Our coaching system is built to make you trainer-independent: equipped with the knowledge, technique, and discipline to work out effectively on your own terms.
+          At <strong>Fix Your Body,</strong> we believe real fitness means building confidence, not dependency. Our coaching system is built to make you trainer-independent: equipped with the knowledge, technique, and discipline to work out effectively on your own terms.
         </p>
         <p
           className="mb-4"
@@ -38,7 +38,7 @@ export default function About() {
           className="mb-8"
           style={{ fontSize: "15px", color: "rgba(255,255,255,0.65)", lineHeight: 1.80 }}
         >
-          Our team brings experience from leading fitness organisations like Fittr and Team Aminder, combining proven coaching methods with evidence-based practices to deliver lasting transformations.
+          Our team brings experience from leading fitness organisations like <strong>Fittr</strong> and <strong>Team Aminder</strong>, combining proven coaching methods with evidence-based practices to deliver lasting transformations.
         </p>
 
         {/* Credentials label */}

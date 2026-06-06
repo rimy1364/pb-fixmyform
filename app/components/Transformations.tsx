@@ -12,14 +12,13 @@ const transformations = [
   { name: "Priya T.",  duration: "10 Weeks", result: "-10 kg", weightBefore: null,      weightAfter: null,      description: "Wedding prep transformation — achieved her dream look in 10 weeks.",       image: null },
 ];
 
-const VISIBLE = 2;
-const TOTAL   = transformations.length;
+const TOTAL = transformations.length;
 
 export default function Transformations() {
   const [current, setCurrent] = useState(0);
   const prev = () => setCurrent((c) => (c - 1 + TOTAL) % TOTAL);
   const next = () => setCurrent((c) => (c + 1) % TOTAL);
-  const getVisible = () => Array.from({ length: VISIBLE }, (_, i) => transformations[(current + i) % TOTAL]);
+  const getVisible = () => [transformations[current]];
 
   return (
     <section id="transformations" className="pt-20 pb-14 px-6 relative overflow-hidden" style={{ background: "#0d1a2e" }}>
@@ -54,10 +53,10 @@ export default function Transformations() {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6">
-          {getVisible().map((t, i) => (
+        <div className="flex justify-center mb-6">
+          <div className="w-full max-w-md">
+          {(() => { const t = getVisible()[0]; return (
             <div
-              key={`${t.name}-${i}`}
               className="relative rounded-2xl overflow-hidden transition-all duration-300"
               style={{ background: "#0a1628", border: "1px solid rgba(255,255,255,0.08)" }}
             >
@@ -126,7 +125,8 @@ export default function Transformations() {
                 <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.50)" }}>{t.description}</p>
               </div>
             </div>
-          ))}
+          ); })()}
+          </div>
         </div>
 
         {/* Navigation */}
