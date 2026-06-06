@@ -8,6 +8,7 @@ import Testimonials from "./components/Testimonials";
 import CTA from "./components/CTA";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import StickyBar from "./components/StickyBar";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
+      <StickyBar />
     </>
   );
 }
