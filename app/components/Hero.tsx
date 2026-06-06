@@ -2,7 +2,6 @@ import { ChevronDown } from "lucide-react";
 
 const stats = [
   { value: "500+", label: "Lives Transformed" },
-  { value: "98%",  label: "Success Rate" },
   { value: "8+",   label: "Years Experience" },
 ];
 
