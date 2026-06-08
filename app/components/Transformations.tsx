@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const transformations = [
   { name: "Client",    duration: "12 Weeks", result: "-18 kg", weightBefore: "100 kg", weightAfter: "90 kg",  description: "Lost 18kg while maintaining muscle and energy for 12-hour work shifts.", image: "/image1.jpeg" },
@@ -148,40 +147,20 @@ export default function Transformations() {
           </div>
         </div>
 
-        {/* Navigation */}
-        <div className="flex items-center justify-center gap-4">
-          <button
-            onClick={prev}
-            className="w-9 h-9 rounded-full flex items-center justify-center transition-all"
-            style={{ border: "1px solid rgba(255,255,255,0.20)", color: "rgba(255,255,255,0.50)", background: "transparent", cursor: "pointer" }}
-            onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.borderColor = "#00d4aa"; (e.currentTarget as HTMLButtonElement).style.color = "#00d4aa"; }}
-            onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(255,255,255,0.20)"; (e.currentTarget as HTMLButtonElement).style.color = "rgba(255,255,255,0.50)"; }}
-          >
-            <ChevronLeft size={16} />
-          </button>
-          <div className="flex gap-2">
-            {Array.from({ length: TOTAL }).map((_, i) => (
-              <button
-                key={i}
-                onClick={() => goTo(i)}
-                className="rounded-full transition-all duration-300"
-                style={{
-                  height: "8px", width: i === current ? "24px" : "8px",
-                  background: i === current ? "#00d4aa" : "rgba(255,255,255,0.20)",
-                  border: "none", cursor: "pointer", padding: 0,
-                }}
-              />
-            ))}
-          </div>
-          <button
-            onClick={next}
-            className="w-9 h-9 rounded-full flex items-center justify-center transition-all"
-            style={{ border: "1px solid rgba(255,255,255,0.20)", color: "rgba(255,255,255,0.50)", background: "transparent", cursor: "pointer" }}
-            onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.borderColor = "#00d4aa"; (e.currentTarget as HTMLButtonElement).style.color = "#00d4aa"; }}
-            onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(255,255,255,0.20)"; (e.currentTarget as HTMLButtonElement).style.color = "rgba(255,255,255,0.50)"; }}
-          >
-            <ChevronRight size={16} />
-          </button>
+        {/* Dots */}
+        <div className="flex items-center justify-center gap-2">
+          {Array.from({ length: TOTAL }).map((_, i) => (
+            <button
+              key={i}
+              onClick={() => goTo(i)}
+              className="rounded-full transition-all duration-300"
+              style={{
+                height: "8px", width: i === current ? "24px" : "8px",
+                background: i === current ? "#00d4aa" : "rgba(255,255,255,0.20)",
+                border: "none", cursor: "pointer", padding: 0,
+              }}
+            />
+          ))}
         </div>
       </div>
     </section>

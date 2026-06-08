@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { Star, ChevronLeft, ChevronRight } from "lucide-react";
+import { Star } from "lucide-react";
 
 const testimonials = [
   {
@@ -58,9 +58,12 @@ const TOTAL = testimonials.length;
 
 export default function Testimonials() {
   const [current, setCurrent] = useState(0);
+  const [animKey, setAnimKey] = useState(0);
+  const [slideFrom, setSlideFrom] = useState<"right" | "left">("right");
 
-  const prev = () => setCurrent((c) => (c - 1 + TOTAL) % TOTAL);
-  const next = () => setCurrent((c) => (c + 1) % TOTAL);
+  const prev = () => { setSlideFrom("left"); setCurrent((c) => (c - 1 + TOTAL) % TOTAL); setAnimKey((k) => k + 1); };
+  const next = () => { setSlideFrom("right"); setCurrent((c) => (c + 1) % TOTAL); setAnimKey((k) => k + 1); };
+  const goTo = (i: number) => { setSlideFrom(i > current ? "right" : "left"); setCurrent(i); setAnimKey((k) => k + 1); };
 
   const touchStartX = useRef<number | null>(null);
   const handleTouchStart = (e: React.TouchEvent) => { touchStartX.current = e.touches[0].clientX; };
@@ -76,6 +79,10 @@ export default function Testimonials() {
 
   return (
     <section id="testimonials" className="pt-20 pb-16 px-5 relative overflow-hidden">
+      <style>{`
+        @keyframes slideInRight { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+        @keyframes slideInLeft  { from { transform: translateX(-100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+      `}</style>
       {/* Top divider line */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#00d4aa]/30 to-transparent" />
@@ -111,7 +118,8 @@ export default function Testimonials() {
 
         {/* Card */}
         <div className="flex justify-center mb-8">
-          <div className="w-full max-w-md" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
+          <div className="w-full max-w-md overflow-hidden" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
+            <div key={animKey} style={{ animation: `${slideFrom === "right" ? "slideInRight" : "slideInLeft"} 0.35s ease` }}>
             {t.chatImage ? (
               <div className="rounded-2xl overflow-hidden" style={{ border: "1px solid rgba(255,255,255,0.10)" }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -150,63 +158,26 @@ export default function Testimonials() {
                 </div>
               </div>
             )}
-          </div>
+          </div></div>
         </div>
 
-        {/* Controls — matching Transformations style */}
-        <div className="flex items-center justify-center gap-4">
-          <button
-            onClick={prev}
-            className="flex items-center justify-center transition-all"
-            style={{
-              width: "40px", height: "40px",
-              borderRadius: "50%",
-              border: "1px solid rgba(255,255,255,0.20)",
-              color: "rgba(255,255,255,0.50)",
-              background: "transparent",
-              cursor: "pointer",
-            }}
-            onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.borderColor = "#00d4aa"; (e.currentTarget as HTMLButtonElement).style.color = "#00d4aa"; }}
-            onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(255,255,255,0.20)"; (e.currentTarget as HTMLButtonElement).style.color = "rgba(255,255,255,0.50)"; }}
-          >
-            <ChevronLeft size={16} />
-          </button>
-
-          {/* Dots */}
-          <div className="flex gap-2">
-            {Array.from({ length: TOTAL }).map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setCurrent(i)}
-                className="transition-all duration-300 rounded-full"
-                style={{
-                  height: "8px",
-                  width: i === current ? "24px" : "8px",
-                  background: i === current ? "#00d4aa" : "rgba(255,255,255,0.20)",
-                  border: "none",
-                  cursor: "pointer",
-                  padding: 0,
-                }}
-              />
-            ))}
-          </div>
-
-          <button
-            onClick={next}
-            className="flex items-center justify-center transition-all"
-            style={{
-              width: "40px", height: "40px",
-              borderRadius: "50%",
-              border: "1px solid rgba(255,255,255,0.20)",
-              color: "rgba(255,255,255,0.50)",
-              background: "transparent",
-              cursor: "pointer",
-            }}
-            onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.borderColor = "#00d4aa"; (e.currentTarget as HTMLButtonElement).style.color = "#00d4aa"; }}
-            onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(255,255,255,0.20)"; (e.currentTarget as HTMLButtonElement).style.color = "rgba(255,255,255,0.50)"; }}
-          >
-            <ChevronRight size={16} />
-          </button>
+        {/* Dots */}
+        <div className="flex items-center justify-center gap-2">
+          {Array.from({ length: TOTAL }).map((_, i) => (
+            <button
+              key={i}
+              onClick={() => goTo(i)}
+              className="transition-all duration-300 rounded-full"
+              style={{
+                height: "8px",
+                width: i === current ? "24px" : "8px",
+                background: i === current ? "#00d4aa" : "rgba(255,255,255,0.20)",
+                border: "none",
+                cursor: "pointer",
+                padding: 0,
+              }}
+            />
+          ))}
         </div>
       </div>
     </section>
