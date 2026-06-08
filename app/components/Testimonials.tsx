@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 
 const testimonials = [
@@ -62,6 +62,16 @@ export default function Testimonials() {
   const prev = () => setCurrent((c) => (c - 1 + TOTAL) % TOTAL);
   const next = () => setCurrent((c) => (c + 1) % TOTAL);
 
+  const touchStartX = useRef<number | null>(null);
+  const handleTouchStart = (e: React.TouchEvent) => { touchStartX.current = e.touches[0].clientX; };
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const diff = touchStartX.current - e.changedTouches[0].clientX;
+    if (diff > 50) next();
+    else if (diff < -50) prev();
+    touchStartX.current = null;
+  };
+
   const t = testimonials[current];
 
   return (
@@ -101,7 +111,7 @@ export default function Testimonials() {
 
         {/* Card */}
         <div className="flex justify-center mb-8">
-          <div className="w-full max-w-md">
+          <div className="w-full max-w-md" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
             {t.chatImage ? (
               <div className="rounded-2xl overflow-hidden" style={{ border: "1px solid rgba(255,255,255,0.10)" }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
