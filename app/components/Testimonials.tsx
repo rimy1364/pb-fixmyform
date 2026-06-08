@@ -10,6 +10,7 @@ const testimonials = [
     text: "I'd tried gym for 2 years with zero progress. Prateek fixed my fundamentals in week one. By week 12, I was unrecognisable. Best investment I've ever made.",
     stars: 5,
     result: "-16 kg in 12 weeks",
+    chatImage: "/testimonials/chat1.jpeg",
   },
   {
     name: "Ananya Sharma",
@@ -17,6 +18,7 @@ const testimonials = [
     text: "The nutrition plan was so practical — I never felt like I was on a diet. Prateek's WhatsApp check-ins kept me accountable through the toughest weeks.",
     stars: 5,
     result: "-11 kg in 10 weeks",
+    chatImage: "/testimonials/chat2.jpeg",
   },
   {
     name: "Karthik R.",
@@ -24,6 +26,7 @@ const testimonials = [
     text: "With a 70-hour work week, I thought fitness was impossible. Prateek proved me wrong. His approach fit around my crazy schedule perfectly.",
     stars: 5,
     result: "-20 kg in 16 weeks",
+    chatImage: null,
   },
   {
     name: "Meera Joshi",
@@ -31,6 +34,7 @@ const testimonials = [
     text: "As a doctor I was sceptical of online coaching. Prateek's evidence-based approach won me over. My bloodwork improved alongside the physical transformation.",
     stars: 5,
     result: "-9 kg in 8 weeks",
+    chatImage: null,
   },
   {
     name: "Aditya Verma",
@@ -38,6 +42,7 @@ const testimonials = [
     text: "I went from barely doing 5 pushups to benching 80kg in 6 months. FIXYOURBODY is not just a programme — it's a complete mindset shift.",
     stars: 5,
     result: "+8 kg muscle",
+    chatImage: null,
   },
   {
     name: "Sunita Patel",
@@ -45,6 +50,7 @@ const testimonials = [
     text: "Post-pregnancy I felt lost. Prateek built a plan that respected my recovery and delivered results I didn't think were possible for me.",
     stars: 5,
     result: "-14 kg in 14 weeks",
+    chatImage: null,
   },
 ];
 
@@ -96,36 +102,44 @@ export default function Testimonials() {
         {/* Card */}
         <div className="flex justify-center mb-8">
           <div className="w-full max-w-md">
-            <div
-              className="rounded-2xl p-6 flex flex-col transition-all duration-300"
-              style={{ background: "#0D1528", border: "1px solid rgba(255,255,255,0.10)" }}
-            >
-              {/* Stars */}
-              <div className="flex gap-1 mb-4">
-                {Array.from({ length: t.stars }).map((_, s) => (
-                  <Star key={s} size={14} className="fill-[#FFB800] text-[#FFB800]" />
-                ))}
-              </div>
-
-              {/* Quote */}
-              <p className="text-sm leading-relaxed mb-5 flex-1" style={{ color: "rgba(255,255,255,0.75)" }}>
-                &ldquo;{t.text}&rdquo;
-              </p>
-
-              {/* Footer */}
-              <div className="flex items-center justify-between pt-4" style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}>
-                <div>
-                  <div className="font-bold text-white text-sm">{t.name}</div>
-                  <div className="text-xs mt-0.5" style={{ color: "rgba(255,255,255,0.40)" }}>{t.role}</div>
-                </div>
-                <div
-                  className="text-xs font-bold px-2 py-1 rounded-full"
-                  style={{ color: "#00d4aa", background: "rgba(0,212,170,0.10)", whiteSpace: "nowrap" }}
-                >
-                  {t.result}
+            {t.chatImage ? (
+              <div className="rounded-2xl overflow-hidden" style={{ border: "1px solid rgba(255,255,255,0.10)" }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={t.chatImage} alt={`${t.name} chat`} className="w-full" style={{ display: "block" }} />
+                <div className="flex items-center justify-between px-4 py-3" style={{ background: "#0D1528" }}>
+                  <div>
+                    <div className="font-bold text-white text-sm">{t.name}</div>
+                    <div className="text-xs mt-0.5" style={{ color: "rgba(255,255,255,0.40)" }}>{t.role}</div>
+                  </div>
+                  <div className="text-xs font-bold px-2 py-1 rounded-full" style={{ color: "#00d4aa", background: "rgba(0,212,170,0.10)", whiteSpace: "nowrap" }}>
+                    {t.result}
+                  </div>
                 </div>
               </div>
-            </div>
+            ) : (
+              <div
+                className="rounded-2xl p-6 flex flex-col transition-all duration-300"
+                style={{ background: "#0D1528", border: "1px solid rgba(255,255,255,0.10)" }}
+              >
+                <div className="flex gap-1 mb-4">
+                  {Array.from({ length: t.stars }).map((_, s) => (
+                    <Star key={s} size={14} className="fill-[#FFB800] text-[#FFB800]" />
+                  ))}
+                </div>
+                <p className="text-sm leading-relaxed mb-5 flex-1" style={{ color: "rgba(255,255,255,0.75)" }}>
+                  &ldquo;{t.text}&rdquo;
+                </p>
+                <div className="flex items-center justify-between pt-4" style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}>
+                  <div>
+                    <div className="font-bold text-white text-sm">{t.name}</div>
+                    <div className="text-xs mt-0.5" style={{ color: "rgba(255,255,255,0.40)" }}>{t.role}</div>
+                  </div>
+                  <div className="text-xs font-bold px-2 py-1 rounded-full" style={{ color: "#00d4aa", background: "rgba(0,212,170,0.10)", whiteSpace: "nowrap" }}>
+                    {t.result}
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
 
