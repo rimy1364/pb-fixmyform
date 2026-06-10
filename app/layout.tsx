@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
+import { Suspense } from "react";
+import PostHogProvider from "./components/PostHogProvider";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -30,7 +32,9 @@ export default function RootLayout({
         className="min-h-full flex flex-col text-white"
         style={{ background: "#080f1d", fontFamily: "var(--font-outfit), sans-serif" }}
       >
-        {children}
+        <Suspense>
+          <PostHogProvider>{children}</PostHogProvider>
+        </Suspense>
       </body>
     </html>
   );
