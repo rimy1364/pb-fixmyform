@@ -3,12 +3,12 @@
 import { useState, useRef } from "react";
 
 const transformations = [
-  { name: "Mandeep Singh (Security Manager)",    duration: "12 Weeks", result: "-18 kg", weightBefore: "100 kg", weightAfter: "90 kg",  image: "/transformation/result1.jpeg" },
-  { name: "Deep Chheda (Software Engineer)",  duration: "16 Weeks", result: "-14 kg", weightBefore: "100 kg", weightAfter: "90 kg",  image: "/transformation/result2.jpeg" },
-  { name: "Anupan Tiwari (Veterinarian)",  duration: "8 Weeks",  result: "+6 kg",  weightBefore: "100 kg", weightAfter: "90 kg",  image: "/transformation/result3.jpeg" },
-  { name: "Nikhil John (Armed Forces)",  duration: "12 Weeks", result: "-12 kg", weightBefore: "100 kg", weightAfter: "90 kg",  image: "/transformation/result4.jpeg" },
-  { name: "Sameer kapoor (Businessman)", duration: "20 Weeks", result: "-22 kg", weightBefore: "100 kg", weightAfter: "90 kg",  image: "/transformation/result5.jpeg" },
-  { name: "CharanDeep Singh (Trucker)",  duration: "10 Weeks", result: "-10 kg", weightBefore: "100 kg", weightAfter: "90 kg",  image: "/transformation/result6.jpeg" },
+  { name: "Mandeep Singh",  occupation: "Security Manager",  duration: "12 Weeks", result: "-18 kg", weightBefore: "100 kg", weightAfter: "90 kg",  image: "/transformation/result1.jpeg" },
+  { name: "Deep Chheda",    occupation: "Software Engineer", duration: "16 Weeks", result: "-14 kg", weightBefore: "100 kg", weightAfter: "90 kg",  image: "/transformation/result2.jpeg" },
+  { name: "Anupan Tiwari",  occupation: "Veterinarian",      duration: "8 Weeks",  result: "+6 kg",  weightBefore: "100 kg", weightAfter: "90 kg",  image: "/transformation/result3.jpeg" },
+  { name: "Nikhil John",    occupation: "Armed Forces",      duration: "12 Weeks", result: "-12 kg", weightBefore: "100 kg", weightAfter: "90 kg",  image: "/transformation/result4.jpeg" },
+  { name: "Sameer Kapoor",  occupation: "Businessman",       duration: "20 Weeks", result: "-22 kg", weightBefore: "100 kg", weightAfter: "90 kg",  image: "/transformation/result5.jpeg" },
+  { name: "CharanDeep Singh", occupation: "Trucker",         duration: "10 Weeks", result: "-10 kg", weightBefore: "100 kg", weightAfter: "90 kg",  image: "/transformation/result6.jpeg" },
 ];
 
 const TOTAL = transformations.length;
@@ -132,7 +132,10 @@ export default function Transformations() {
               {/* Info */}
               <div className="p-4">
                 <div className="flex items-center justify-between">
-                  <h3 className="font-bold text-white text-sm">{t.name}</h3>
+                  <div>
+                    <h3 className="font-bold text-white text-sm">{t.name}</h3>
+                    <p className="text-xs mt-0.5" style={{ color: "rgba(255,255,255,0.40)" }}>{t.occupation}</p>
+                  </div>
                   <span
                     className="text-xs px-2 py-0.5 rounded-full"
                     style={{ color: "#00d4aa", background: "rgba(0,212,170,0.10)" }}

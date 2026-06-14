@@ -37,8 +37,9 @@ export default function Navbar() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/logo.png" alt="Fix Your Body" style={{ height: "40px", width: "40px", objectFit: "contain", borderRadius: "50%" }} />
           <span style={{ fontSize: "16px", fontWeight: 800, letterSpacing: "-0.3px" }}>
-            <span style={{ color: "#ffffff" }}>Fix Your </span>
-            <span style={{ color: "#00d4aa" }}>Body</span>
+            <span style={{ color: "#ffffff" }}>Fix </span>
+            <span style={{ color: "#00d4aa" }}>Your </span>
+            <span style={{ color: "#ffffff" }}>Body</span>
           </span>
         </a>
 
