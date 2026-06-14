@@ -7,7 +7,6 @@ const testimonials = [
   { chatImage: "/testimonials/chat2.jpeg" },
   { chatImage: "/testimonials/chat3.jpeg" },
   { chatImage: "/testimonials/chat4.jpeg" },
-  { chatImage: "/testimonials/chat5.jpeg" },
 ];
 
 const TOTAL = testimonials.length;
