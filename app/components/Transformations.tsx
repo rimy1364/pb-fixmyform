@@ -34,8 +34,8 @@ export default function Transformations() {
   return (
     <section id="transformations" className="pt-20 pb-14 px-2 relative overflow-hidden" style={{ background: "#0d1a2e" }}>
       <style>{`
-        @keyframes slideInRight { from { transform: translateX(100%); } to { transform: translateX(0); } }
-        @keyframes slideInLeft  { from { transform: translateX(-100%); } to { transform: translateX(0); } }
+        @keyframes slideInRight { from { transform: translateX(100%) scale(0.96); } to { transform: translateX(0) scale(1); } }
+        @keyframes slideInLeft  { from { transform: translateX(-100%) scale(0.96); } to { transform: translateX(0) scale(1); } }
       `}</style>
       {/* Top/bottom divider lines */}
       <div className="absolute inset-0 pointer-events-none">

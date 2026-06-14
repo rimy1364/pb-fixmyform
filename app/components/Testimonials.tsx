@@ -35,8 +35,8 @@ export default function Testimonials() {
   return (
     <section id="testimonials" className="pt-20 pb-16 px-5 relative overflow-hidden">
       <style>{`
-        @keyframes slideInRight { from { transform: translateX(100%); } to { transform: translateX(0); } }
-        @keyframes slideInLeft  { from { transform: translateX(-100%); } to { transform: translateX(0); } }
+        @keyframes slideInRight { from { transform: translateX(100%) scale(0.96); } to { transform: translateX(0) scale(1); } }
+        @keyframes slideInLeft  { from { transform: translateX(-100%) scale(0.96); } to { transform: translateX(0) scale(1); } }
       `}</style>
       {/* Top divider line */}
       <div className="absolute inset-0 pointer-events-none">
