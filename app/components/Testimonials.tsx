@@ -44,14 +44,6 @@ const testimonials = [
     result: "+8 kg muscle",
     chatImage: "/testimonials/chat5.jpeg",
   },
-  {
-    name: "Sunita Patel",
-    role: "Teacher, Ahmedabad",
-    text: "Post-pregnancy I felt lost. Prateek built a plan that respected my recovery and delivered results I didn't think were possible for me.",
-    stars: 5,
-    result: "-14 kg in 14 weeks",
-    chatImage: null,
-  },
 ];
 
 const TOTAL = testimonials.length;
