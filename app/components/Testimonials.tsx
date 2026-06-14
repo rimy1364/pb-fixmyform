@@ -26,7 +26,7 @@ const testimonials = [
     text: "With a 70-hour work week, I thought fitness was impossible. Prateek proved me wrong. His approach fit around my crazy schedule perfectly.",
     stars: 5,
     result: "-20 kg in 16 weeks",
-    chatImage: null,
+    chatImage: "/testimonials/chat3.jpeg",
   },
   {
     name: "Meera Joshi",
@@ -34,7 +34,7 @@ const testimonials = [
     text: "As a doctor I was sceptical of online coaching. Prateek's evidence-based approach won me over. My bloodwork improved alongside the physical transformation.",
     stars: 5,
     result: "-9 kg in 8 weeks",
-    chatImage: null,
+    chatImage: "/testimonials/chat4.jpeg",
   },
   {
     name: "Aditya Verma",
@@ -42,7 +42,7 @@ const testimonials = [
     text: "I went from barely doing 5 pushups to benching 80kg in 6 months. FIXYOURBODY is not just a programme — it's a complete mindset shift.",
     stars: 5,
     result: "+8 kg muscle",
-    chatImage: null,
+    chatImage: "/testimonials/chat5.jpeg",
   },
   {
     name: "Sunita Patel",
