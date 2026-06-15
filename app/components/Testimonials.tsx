@@ -13,12 +13,10 @@ const TOTAL = testimonials.length;
 
 export default function Testimonials() {
   const [current, setCurrent] = useState(0);
-  const [animKey, setAnimKey] = useState(0);
-  const [slideFrom, setSlideFrom] = useState<"right" | "left">("right");
 
-  const prev = () => { setSlideFrom("left"); setCurrent((c) => (c - 1 + TOTAL) % TOTAL); setAnimKey((k) => k + 1); };
-  const next = () => { setSlideFrom("right"); setCurrent((c) => (c + 1) % TOTAL); setAnimKey((k) => k + 1); };
-  const goTo = (i: number) => { setSlideFrom(i > current ? "right" : "left"); setCurrent(i); setAnimKey((k) => k + 1); };
+  const prev = () => setCurrent((c) => (c - 1 + TOTAL) % TOTAL);
+  const next = () => setCurrent((c) => (c + 1) % TOTAL);
+  const goTo = (i: number) => setCurrent(i);
 
   const touchStartX = useRef<number | null>(null);
   const handleTouchStart = (e: React.TouchEvent) => { touchStartX.current = e.touches[0].clientX; };
@@ -30,14 +28,8 @@ export default function Testimonials() {
     touchStartX.current = null;
   };
 
-  const t = testimonials[current];
-
   return (
     <section id="testimonials" className="pt-20 pb-16 px-5 relative overflow-hidden">
-      <style>{`
-        @keyframes slideInRight { from { transform: translateX(100%) scale(0.96); } to { transform: translateX(0) scale(1); } }
-        @keyframes slideInLeft  { from { transform: translateX(-100%) scale(0.96); } to { transform: translateX(0) scale(1); } }
-      `}</style>
       {/* Top divider line */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#00d4aa]/30 to-transparent" />
@@ -74,12 +66,20 @@ export default function Testimonials() {
         {/* Card */}
         <div className="flex justify-center mb-8">
           <div className="w-full max-w-md overflow-hidden" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
-            <div key={animKey} style={{ animation: `${slideFrom === "right" ? "slideInRight" : "slideInLeft"} 0.35s ease` }}>
-            <div className="rounded-2xl overflow-hidden" style={{ border: "1px solid rgba(255,255,255,0.10)" }}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={t.chatImage} alt="Testimonial chat" className="w-full" style={{ display: "block" }} />
+            <div
+              className="flex"
+              style={{ transform: `translateX(-${current * 100}%)`, transition: "transform 0.35s ease" }}
+            >
+              {testimonials.map((item, i) => (
+                <div key={i} className="shrink-0 w-full">
+                  <div className="rounded-2xl overflow-hidden" style={{ border: "1px solid rgba(255,255,255,0.10)" }}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={item.chatImage} alt="Testimonial chat" className="w-full" style={{ display: "block" }} />
+                  </div>
+                </div>
+              ))}
             </div>
-          </div></div>
+          </div>
         </div>
 
         {/* Dots */}

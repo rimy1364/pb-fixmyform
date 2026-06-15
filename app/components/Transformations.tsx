@@ -3,11 +3,11 @@
 import { useState, useRef } from "react";
 
 const transformations = [
-  { name: "Mandeep Singh",  occupation: "Security Manager",  duration: "32 Weeks", result: "-18 kg", weightBefore: "119 kg", weightAfter: "102 kg",  image: "/transformation/result1.jpeg" },
-  { name: "Deep Chheda",    occupation: "Software Engineer", duration: "80 Weeks", result: "-49kg", weightBefore: "134 kg", weightAfter: "85 kg",  image: "/transformation/result2.jpeg" },
-  { name: "Anupan Tiwari",  occupation: "Veterinarian",      duration: "72 Weeks",  result: "-11kg",  weightBefore: "70 kg", weightAfter: "59 kg",  image: "/transformation/result3.jpeg" },
-  { name: "Nikhil John",    occupation: "Armed Forces",      duration: "36 Weeks", result: "-12 kg", weightBefore: "73 kg", weightAfter: "63 kg",  image: "/transformation/result4.jpeg" },
-  { name: "Sameer Kapoor",  occupation: "Businessman",       duration: "28 Weeks", result: "-22 kg", weightBefore: "97 kg", weightAfter: "79 kg",  image: "/transformation/result5.jpeg" },
+  { name: "Mandeep Singh",  occupation: "Security Manager",  duration: "32 Weeks", result: "-17 kg", weightBefore: "119 kg", weightAfter: "102 kg",  image: "/transformation/result1.jpeg" },
+  { name: "Deep Chheda",    occupation: "Software Engineer", duration: "80 Weeks", result: "-49 kg", weightBefore: "134 kg", weightAfter: "85 kg",  image: "/transformation/result2.jpeg" },
+  { name: "Anupan Tiwari",  occupation: "Veterinarian",      duration: "72 Weeks",  result: "-11 kg",  weightBefore: "70 kg", weightAfter: "59 kg",  image: "/transformation/result3.jpeg" },
+  { name: "Nikhil John",    occupation: "Armed Forces",      duration: "36 Weeks", result: "-10 kg", weightBefore: "73 kg", weightAfter: "63 kg",  image: "/transformation/result4.jpeg" },
+  { name: "Sameer Kapoor",  occupation: "Businessman",       duration: "28 Weeks", result: "-18kg", weightBefore: "97 kg", weightAfter: "79 kg",  image: "/transformation/result5.jpeg" },
   { name: "CharanDeep Singh", occupation: "Trucker",         duration: "44 Weeks", result: "-16 kg", weightBefore: "84 kg", weightAfter: "68 kg",  image: "/transformation/result6.jpeg" },
 ];
 
