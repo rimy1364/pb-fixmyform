@@ -159,8 +159,8 @@ export default function Plans() {
         {/* Note */}
         <p className="text-center text-sm mt-6" style={{ color: "rgba(255,255,255,0.35)" }}>
           Not sure which plan is right for you?{" "}
-          <a href="#contact" style={{ color: "#00d4aa" }} className="hover:underline">
-            Book a quick 15-min call.
+          <a href="https://calendly.com/bnsl-prateek/30min" target="_blank" rel="noopener noreferrer" style={{ color: "#00d4aa" }} className="hover:underline">
+            Book a free 15-min call.
           </a>
         </p>
       </div>

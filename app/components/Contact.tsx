@@ -1,5 +1,6 @@
 "use client";
 
+const CALENDLY_URL      = "https://calendly.com/bnsl-prateek/30min";
 const WHATSAPP_NUMBER   = "919205802858";
 const WHATSAPP_MESSAGE  = "Hi Prateek, I am interested in FIXYOURBODY coaching. Can we connect?";
 const ENQUIRY_FORM_URL  = "https://docs.google.com/forms/d/e/1FAIpQLSdfByh_JqHdmSuRUuEphgbFe-Bf2ZvoGIto910Rn-9bDFqseQ/viewform";
@@ -136,7 +137,50 @@ export default function Contact() {
             </span>
           </a>
 
-          {/* 3 — Consultation Call (hidden, activate later) */}
+          {/* 3 — Book a Call */}
+          <a
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex flex-col items-center text-center rounded-2xl p-8 transition-all duration-300 hover:scale-[1.02]"
+            style={{ background: "#0a1628", border: "1.5px solid rgba(0,212,170,0.25)", textDecoration: "none" }}
+          >
+            <div
+              className="flex items-center justify-center mb-5"
+              style={{
+                width: "64px", height: "64px",
+                borderRadius: "50%",
+                background: "rgba(0,212,170,0.10)",
+                border: "1.5px solid rgba(0,212,170,0.30)",
+              }}
+            >
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00d4aa" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+                <circle cx="12" cy="16" r="1" fill="#00d4aa"/>
+              </svg>
+            </div>
+            <h3 className="font-bold text-white mb-2" style={{ fontSize: "17px" }}>
+              Book a Free Call
+            </h3>
+            <p style={{ fontSize: "13px", color: "rgba(255,255,255,0.50)", lineHeight: 1.6, marginBottom: "20px" }}>
+              Schedule a free 15-min consultation with our experts. Pick a time that works for you.
+            </p>
+            <span
+              className="mt-auto font-bold"
+              style={{
+                background: "#00d4aa",
+                color: "#0a0f1e",
+                borderRadius: "999px",
+                padding: "10px 24px",
+                fontSize: "13px",
+              }}
+            >
+              Book Now →
+            </span>
+          </a>
 
           {/* 4 — Instagram DM */}
           <a
