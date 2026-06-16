@@ -44,6 +44,13 @@ const plans = [
   },
 ];
 
+const WHATSAPP_NUMBER = "919205802858";
+
+const openWhatsApp = (planName: string) => {
+  const message = `Hi Prateek, I'd like to get started with the *${planName}* plan on FIXYOURBODY. Can we connect?`;
+  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, "_blank");
+};
+
 export default function Plans() {
   return (
     <section id="plans" className="pt-20 pb-14 px-6" style={{ background: "#080f1d" }}>
@@ -141,7 +148,7 @@ export default function Plans() {
                     ? { background: "#00d4aa", color: "#080f1d", border: "none", boxShadow: "0 0 20px rgba(0,212,170,0.30)" }
                     : { background: "transparent", color: "#00d4aa", border: "1.5px solid rgba(0,212,170,0.50)" }
                 }
-                onClick={() => alert("Booking coming soon! Payment integration in progress.")}
+                onClick={() => openWhatsApp(plan.name)}
               >
                 {plan.cta}
               </button>

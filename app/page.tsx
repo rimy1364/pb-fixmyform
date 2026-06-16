@@ -18,8 +18,8 @@ export default function Home() {
         <About />
         <HowItWorks />
         <Transformations />
-        <Plans />
         <Testimonials />
+        <Plans />
         {/* <CTA /> */}
         <Contact />
       </main>
