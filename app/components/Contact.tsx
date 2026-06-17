@@ -1,18 +1,14 @@
 "use client";
 
-import { useState } from "react";
-
-const CALENDLY_URL      = "https://calendly.com/bnsl-prateek/30min";
 const WHATSAPP_NUMBER   = "919205802858";
 const WHATSAPP_MESSAGE  = "Hi Prateek, I am interested in FIXYOURBODY coaching. Can we connect?";
 const ENQUIRY_FORM_URL  = "https://docs.google.com/forms/d/e/1FAIpQLSdfByh_JqHdmSuRUuEphgbFe-Bf2ZvoGIto910Rn-9bDFqseQ/viewform";
 const INSTAGRAM_HANDLE  = "fixyourbody__";
 
 const waLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+const openCalendly = () => window.dispatchEvent(new Event("open-calendly"));
 
 export default function Contact() {
-  const [showCalendly, setShowCalendly] = useState(false);
-
   return (
     <section id="contact" className="pt-20 pb-16 px-5" style={{ background: "#0d1a2e" }}>
       <div className="max-w-5xl mx-auto">
@@ -143,7 +139,7 @@ export default function Contact() {
 
           {/* 3 — Book a Call */}
           <button
-            onClick={() => setShowCalendly(true)}
+            onClick={openCalendly}
             className="group flex flex-col items-center text-center rounded-2xl p-8 transition-all duration-300 hover:scale-[1.02] w-full"
             style={{ background: "#0a1628", border: "1.5px solid rgba(0,212,170,0.25)", cursor: "pointer" }}
           >
@@ -246,35 +242,6 @@ export default function Contact() {
         </div>
       </div>
 
-      {/* Calendly Modal */}
-      {showCalendly && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4"
-          style={{ background: "rgba(0,0,0,0.75)", backdropFilter: "blur(4px)" }}
-          onClick={() => setShowCalendly(false)}
-        >
-          <div
-            className="relative w-full rounded-2xl overflow-hidden"
-            style={{ maxWidth: "480px", height: "700px", background: "#fff" }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              onClick={() => setShowCalendly(false)}
-              className="absolute top-3 right-3 z-10 flex items-center justify-center rounded-full"
-              style={{ width: "32px", height: "32px", background: "rgba(0,0,0,0.10)", border: "none", cursor: "pointer", fontSize: "18px", color: "#333" }}
-            >
-              ×
-            </button>
-            <iframe
-              src={`${CALENDLY_URL}?hide_gdpr_banner=1`}
-              width="100%"
-              height="100%"
-              frameBorder="0"
-              title="Book a call"
-            />
-          </div>
-        </div>
-      )}
     </section>
   );
 }

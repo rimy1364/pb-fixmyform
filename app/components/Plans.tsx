@@ -47,7 +47,7 @@ const plans = [
 const WHATSAPP_NUMBER = "919205802858";
 
 const openWhatsApp = (planName: string) => {
-  const message = `Hi Prateek, I'd like to get started with the *${planName}* plan on FIXYOURBODY. Can we connect?`;
+  const message = `Hi Prateek, I'd like to get started with the ${planName.toUpperCase()} plan on FIXYOURBODY. Can we connect?`;
   window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, "_blank");
 };
 
@@ -159,9 +159,13 @@ export default function Plans() {
         {/* Note */}
         <p className="text-center text-sm mt-6" style={{ color: "rgba(255,255,255,0.35)" }}>
           Not sure which plan is right for you?{" "}
-          <a href="https://calendly.com/bnsl-prateek/30min" target="_blank" rel="noopener noreferrer" style={{ color: "#00d4aa" }} className="hover:underline">
+          <button
+            onClick={() => window.dispatchEvent(new Event("open-calendly"))}
+            style={{ color: "#00d4aa", background: "none", border: "none", cursor: "pointer", padding: 0, fontSize: "inherit" }}
+            className="hover:underline"
+          >
             Book a free 15-min call.
-          </a>
+          </button>
         </p>
       </div>
     </section>
