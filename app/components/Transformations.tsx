@@ -4,6 +4,7 @@ import { useState, useRef } from "react";
 
 const transformations = [
   { name: "Rachit",         occupation: "Software Engineer", duration: "32 Weeks", result: "-22 kg", weightBefore: "88 kg", weightAfter: "66 kg",  image: "/transformation/result8.jpeg" },
+  { name: "Sourabh",        occupation: "Occupation",        duration: "XX Weeks", result: "-XX kg", weightBefore: "XX kg", weightAfter: "XX kg",  image: "/transformation/Sourabh.jpeg" },
   { name: "Gulshan Kumar",  occupation: "Businessman",       duration: "28 Weeks", result: "-19 kg", weightBefore: "87 kg", weightAfter: "68 kg",  image: "/transformation/result7.jpeg" },
   { name: "Deep Chheda",    occupation: "Software Engineer", duration: "80 Weeks", result: "-49 kg", weightBefore: "134 kg", weightAfter: "85 kg",  image: "/transformation/result2.jpeg" },
   { name: "Anupam Tiwari",  occupation: "Veterinarian",      duration: "32 Weeks",  result: "-11 kg",  weightBefore: "70 kg", weightAfter: "59 kg",  image: "/transformation/result3.jpeg" },
