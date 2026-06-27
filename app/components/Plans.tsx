@@ -19,9 +19,9 @@ const plans = [
       
     ],
     durations: [
-      { label: "1 Month", price: "₹19,999" },
-      { label: "3 Months", price: "₹49,999" },
-      { label: "6 Months", price: "₹74,999" },
+      { label: "1 Month", price: "₹19,999", was: "₹24,999" },
+      { label: "3 Months", price: "₹49,999", was: "₹64,999" },
+      { label: "6 Months", price: "₹74,999", was: "₹99,999" },
     ],
     cta: "Go Elite",
   },
@@ -38,9 +38,9 @@ const plans = [
       "24×7 WhatsApp support",
     ],
     durations: [
-      { label: "3 Months", price: "₹14,999" },
-      { label: "6 Months", price: "₹24,999" },
-      { label: "12 Months", price: "₹44,999" },
+      { label: "3 Months", price: "₹14,999", was: "₹19,999" },
+      { label: "6 Months", price: "₹24,999", was: "₹34,999" },
+      { label: "12 Months", price: "₹44,999", was: "₹59,999" },
     ],
     cta: "Start Transforming",
   },
@@ -57,9 +57,9 @@ const plans = [
       "WhatsApp support",
     ],
     durations: [
-      { label: "3 Months", price: "₹9,999" },
-      { label: "6 Months", price: "₹14,999" },
-      { label: "12 Months", price: "₹24,999" },
+      { label: "3 Months", price: "₹9,999", was: "₹12,999" },
+      { label: "6 Months", price: "₹14,999", was: "₹19,999" },
+      { label: "12 Months", price: "₹24,999", was: "₹34,999" },
     ],
     cta: "Get Started",
   },
@@ -173,11 +173,14 @@ export default function Plans() {
                 </div>
 
                 {/* Price */}
-                <div className="flex items-baseline gap-1 mb-4">
-                  <span className="text-3xl font-black" style={{ color: plan.highlight ? "#00d4aa" : "#ffffff" }}>
-                    {dur.price}
-                  </span>
-                  <span className="text-sm" style={{ color: "rgba(255,255,255,0.40)" }}>/ {dur.label.toLowerCase()}</span>
+                <div className="mb-4">
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-3xl font-black" style={{ color: plan.highlight ? "#00d4aa" : "#ffffff" }}>
+                      {dur.price}
+                    </span>
+                    <span className="text-sm" style={{ color: "rgba(255,255,255,0.40)" }}>/ {dur.label.toLowerCase()}</span>
+                  </div>
+                  <span className="text-sm line-through" style={{ color: "rgba(255,255,255,0.30)" }}>{dur.was}</span>
                 </div>
 
                 {/* Features */}
