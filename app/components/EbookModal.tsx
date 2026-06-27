@@ -33,6 +33,8 @@ export default function EbookModal({ open, onClose }: Props) {
       a.href = "/Gut Health - Complete Healing Blueprint (FIXYOURBODY).pdf";
       a.download = "Gut Health - Complete Healing Blueprint (FIXYOURBODY).pdf";
       a.click();
+      // auto-close after 2s so user can explore the site
+      setTimeout(() => onClose(), 2000);
     } catch {
       setError("Something went wrong. Please try again.");
     } finally {
