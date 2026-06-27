@@ -129,8 +129,11 @@ export default function Plans() {
                   <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.50)" }}>{plan.description}</p>
                 </div>
 
-                {/* Duration selector */}
-                <div className="flex gap-1.5 mb-4 p-1 rounded-xl" style={{ background: "rgba(255,255,255,0.04)" }}>
+                {/* Duration selector - scrollable */}
+                <div
+                  className="flex gap-2 mb-4 overflow-x-auto"
+                  style={{ scrollbarWidth: "none", msOverflowStyle: "none", WebkitOverflowScrolling: "touch" }}
+                >
                   {plan.durations.map((d, di) => (
                     <button
                       key={d.label}
@@ -139,14 +142,14 @@ export default function Plans() {
                         next[pi] = di;
                         setSelected(next);
                       }}
-                      className="flex-1 py-1.5 rounded-lg text-xs font-bold transition-all duration-200 cursor-pointer"
+                      className="flex-shrink-0 px-4 py-1.5 rounded-full text-xs font-bold transition-all duration-200 cursor-pointer whitespace-nowrap"
                       style={
                         selected[pi] === di
                           ? { background: "#00d4aa", color: "#080f1d", border: "none" }
-                          : { background: "transparent", color: "rgba(255,255,255,0.45)", border: "none" }
+                          : { background: "rgba(255,255,255,0.06)", color: "rgba(255,255,255,0.50)", border: "1px solid rgba(255,255,255,0.10)" }
                       }
                     >
-                      {d.label.replace(" Months", "M").replace(" Month", "M")}
+                      {d.label}
                     </button>
                   ))}
                 </div>
