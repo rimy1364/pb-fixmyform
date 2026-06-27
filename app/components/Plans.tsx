@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useCallback } from "react";
 import { Check } from "lucide-react";
 
 const plans = [
@@ -73,57 +73,23 @@ const openWhatsApp = (planName: string, duration: string) => {
 
 export default function Plans() {
   const [selected, setSelected] = useState([0, 0, 0]);
-  const scrollRefs = useRef<(HTMLDivElement | null)[]>([null, null, null]);
-  const scrollTimers = useRef<(ReturnType<typeof setTimeout> | null)[]>([null, null, null]);
-  const isScrollingTo = useRef<boolean[]>([false, false, false]);
+  const touchStartX = useRef<number | null>(null);
 
-  const scrollToIndex = useCallback((pi: number, di: number) => {
-    const container = scrollRefs.current[pi];
-    if (!container) return;
-    const buttons = container.querySelectorAll("button");
-    const btn = buttons[di] as HTMLElement | undefined;
-    if (!btn) return;
-    const left = btn.offsetLeft - (container.clientWidth - btn.clientWidth) / 2;
-    isScrollingTo.current[pi] = true;
-    container.scrollTo({ left: Math.max(0, left), behavior: "smooth" });
-    setTimeout(() => { isScrollingTo.current[pi] = false; }, 400);
-  }, []);
-
-  const detectSelected = useCallback((pi: number) => {
-    const container = scrollRefs.current[pi];
-    if (!container) return;
-    const mid = container.scrollLeft + container.clientWidth / 2;
-    const buttons = Array.from(container.querySelectorAll("button")) as HTMLElement[];
-    let closest = 0, minDist = Infinity;
-    buttons.forEach((btn, i) => {
-      const dist = Math.abs(btn.offsetLeft + btn.clientWidth / 2 - mid);
-      if (dist < minDist) { minDist = dist; closest = i; }
-    });
+  const handleSwipe = useCallback((pi: number, startX: number, endX: number) => {
+    const diff = startX - endX;
+    if (Math.abs(diff) < 40) return;
+    const total = plans[pi].durations.length;
     setSelected(prev => {
-      if (prev[pi] === closest) return prev;
       const next = [...prev];
-      next[pi] = closest;
+      next[pi] = diff > 0
+        ? Math.min(prev[pi] + 1, total - 1)
+        : Math.max(prev[pi] - 1, 0);
       return next;
     });
   }, []);
 
-  const handleScroll = useCallback((pi: number) => {
-    if (isScrollingTo.current[pi]) return;
-    if (scrollTimers.current[pi]) clearTimeout(scrollTimers.current[pi]!);
-    scrollTimers.current[pi] = setTimeout(() => detectSelected(pi), 80);
-  }, [detectSelected]);
-
-  // Scroll to selected index when it changes via external means
-  useEffect(() => {
-    plans.forEach((_, pi) => scrollToIndex(pi, selected[pi]));
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   return (
     <section id="plans" className="pt-20 pb-14 px-6" style={{ background: "#080f1d" }}>
-      <style>{`
-        .dur-scroll::-webkit-scrollbar { display: none; }
-      `}</style>
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
@@ -178,52 +144,31 @@ export default function Plans() {
                   <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.50)" }}>{plan.description}</p>
                 </div>
 
-                {/* Duration scroll picker */}
-                <div className="relative mb-4">
-                  {/* Center highlight indicator */}
-                  <div
-                    className="absolute inset-y-0 left-1/2 -translate-x-1/2 rounded-full pointer-events-none z-10"
-                    style={{ width: "110px", background: "rgba(0,212,170,0.12)", border: "1px solid rgba(0,212,170,0.35)" }}
-                  />
-                  <div
-                    ref={el => { scrollRefs.current[pi] = el; }}
-                    className="dur-scroll flex overflow-x-auto relative"
-                    onScroll={() => handleScroll(pi)}
-                    style={{
-                      scrollbarWidth: "none",
-                      msOverflowStyle: "none",
-                      scrollSnapType: "x mandatory",
-                      WebkitOverflowScrolling: "touch",
-                      paddingLeft: "calc(50% - 55px)",
-                      paddingRight: "calc(50% - 55px)",
-                      gap: "8px",
-                    }}
-                  >
-                    {plan.durations.map((d, di) => (
-                      <button
-                        key={d.label}
-                        onClick={() => {
-                          const next = [...selected];
-                          next[pi] = di;
-                          setSelected(next);
-                          scrollToIndex(pi, di);
-                        }}
-                        className="flex-shrink-0 py-1.5 rounded-full text-xs font-bold transition-all duration-300 cursor-pointer whitespace-nowrap"
-                        style={{
-                          scrollSnapAlign: "center",
-                          width: "110px",
-                          textAlign: "center",
-                          background: "transparent",
-                          border: "none",
-                          color: selected[pi] === di ? "#00d4aa" : "rgba(255,255,255,0.35)",
-                          fontWeight: selected[pi] === di ? 800 : 500,
-                          fontSize: selected[pi] === di ? "13px" : "11px",
-                        }}
-                      >
-                        {d.label}
-                      </button>
-                    ))}
-                  </div>
+                {/* Duration picker — all visible, swipe to change */}
+                <div
+                  className="flex gap-1.5 mb-4 p-1 rounded-xl select-none"
+                  style={{ background: "rgba(255,255,255,0.04)", touchAction: "pan-y" }}
+                  onTouchStart={e => { touchStartX.current = e.touches[0].clientX; }}
+                  onTouchEnd={e => {
+                    if (touchStartX.current === null) return;
+                    handleSwipe(pi, touchStartX.current, e.changedTouches[0].clientX);
+                    touchStartX.current = null;
+                  }}
+                >
+                  {plan.durations.map((d, di) => (
+                    <button
+                      key={d.label}
+                      onClick={() => { const next = [...selected]; next[pi] = di; setSelected(next); }}
+                      className="flex-1 py-1.5 rounded-lg text-xs font-bold transition-all duration-200 cursor-pointer whitespace-nowrap"
+                      style={
+                        selected[pi] === di
+                          ? { background: "#00d4aa", color: "#080f1d", border: "none" }
+                          : { background: "transparent", color: "rgba(255,255,255,0.45)", border: "none" }
+                      }
+                    >
+                      {d.label}
+                    </button>
+                  ))}
                 </div>
 
                 {/* Price */}
