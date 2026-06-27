@@ -76,9 +76,9 @@ export default function EbookModal({ open, onClose }: Props) {
               >
                 Free Download
               </div>
-              <h2 className="text-2xl font-black text-white mb-1">Get Your Free Ebook</h2>
+              <h2 className="text-2xl font-black text-white mb-1">Your Gut Called. It Needs Help. 📞</h2>
               <p className="text-sm" style={{ color: "rgba(255,255,255,0.50)" }}>
-                Fill in your details and we&apos;ll give you instant access.
+                Get the free blueprint to heal your gut & feel like a human again.
               </p>
             </div>
 
