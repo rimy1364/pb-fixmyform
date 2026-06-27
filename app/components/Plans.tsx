@@ -115,8 +115,23 @@ export default function Plans() {
           </p>
         </div>
 
+        {/* Launch offer banner */}
+        <div
+          className="max-w-5xl mx-auto mb-6 px-4 py-3 rounded-xl flex items-center justify-center gap-2 text-sm font-bold"
+          style={{
+            background: "linear-gradient(90deg, rgba(255,180,0,0.10), rgba(255,140,0,0.15), rgba(255,180,0,0.10))",
+            border: "1px solid rgba(255,160,0,0.40)",
+            color: "#ffb700",
+            letterSpacing: "0.01em",
+          }}
+        >
+          <span style={{ fontSize: "16px" }}>🔥</span>
+          Limited Launch Offer — These prices won&apos;t last. Lock in now before they go up.
+          <span style={{ fontSize: "16px" }}>🔥</span>
+        </div>
+
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {plans.map((plan, pi) => {
             const dur = plan.durations[selected[pi]];
             return (
@@ -180,7 +195,12 @@ export default function Plans() {
                     </span>
                     <span className="text-sm" style={{ color: "rgba(255,255,255,0.40)" }}>/ {dur.label.toLowerCase()}</span>
                   </div>
-                  <span className="text-sm line-through" style={{ color: "rgba(255,255,255,0.30)" }}>{dur.was}</span>
+                  <div className="flex items-center gap-2 mt-0.5">
+                    <span className="text-sm line-through" style={{ color: "rgba(255,255,255,0.30)" }}>{dur.was}</span>
+                    <span className="text-xs font-bold px-2 py-0.5 rounded-full" style={{ background: "rgba(255,183,0,0.15)", color: "#ffb700", border: "1px solid rgba(255,183,0,0.30)" }}>
+                      Launch Price
+                    </span>
+                  </div>
                 </div>
 
                 {/* Features */}
