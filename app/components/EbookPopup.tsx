@@ -7,7 +7,7 @@ export default function EbookPopup() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setOpen(true), 10000);
+    const timer = setTimeout(() => setOpen(true), 6000);
     return () => clearTimeout(timer);
   }, []);
 
