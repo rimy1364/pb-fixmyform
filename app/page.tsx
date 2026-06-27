@@ -5,7 +5,7 @@ import HowItWorks from "./components/HowItWorks";
 import Transformations from "./components/Transformations";
 import Plans from "./components/Plans";
 import Testimonials from "./components/Testimonials";
-import EbookSection from "./components/EbookSection";
+import EbookPopup from "./components/EbookPopup";
 import CTA from "./components/CTA";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
@@ -21,13 +21,13 @@ export default function Home() {
         <HowItWorks />
         <Transformations />
         <Testimonials />
-        <EbookSection />
         <Plans />
         {/* <CTA /> */}
         <Contact />
       </main>
       <Footer />
       <CalendlyModal />
+      <EbookPopup />
     </>
   );
 }
