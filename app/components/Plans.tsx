@@ -14,8 +14,9 @@ const plans = [
       "Live form correction",
       "Personalised workout plan",
       "Custom meal plan",
-      "Priority 24×7 on call / WhatsApp access",
       "Fortnight progress check-ins",
+      "Priority 24×7 on call / WhatsApp access",
+      
     ],
     durations: [
       { label: "1 Month", price: "₹19,999" },
@@ -30,9 +31,9 @@ const plans = [
     highlight: false,
     description: "The complete package for serious, lasting transformation.",
     features: [
+      "Daily exercise form correction via whatsapp",
       "Personalised workout plan",
       "Custom meal plan",
-      "Daily exercise form correction",
       "Fortnight progress check-ins",
       "24×7 WhatsApp support",
     ],
@@ -45,14 +46,14 @@ const plans = [
   },
   {
     name: "Basic",
-    tag: null,
+    tag: "Starter",
     highlight: false,
     description: "Start your fitness journey with the essentials.",
     features: [
-      "Beginner friendly",
+      
       "Personalised workout plan",
       "Custom meal plan",
-      "Weekly check-ins",
+      "Fortnight progress check-ins",
       "WhatsApp support",
     ],
     durations: [
