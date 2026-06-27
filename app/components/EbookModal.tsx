@@ -28,11 +28,17 @@ export default function EbookModal({ open, onClose }: Props) {
       });
       if (!res.ok) throw new Error("Failed");
       setDone(true);
-      // trigger download
+      // fetch as blob to force download instead of opening in browser
+      const fileRes = await fetch("/Gut Health - Complete Healing Blueprint (FIXYOURBODY).pdf");
+      const blob = await fileRes.blob();
+      const blobUrl = URL.createObjectURL(blob);
       const a = document.createElement("a");
-      a.href = "/Gut Health - Complete Healing Blueprint (FIXYOURBODY).pdf";
+      a.href = blobUrl;
       a.download = "Gut Health - Complete Healing Blueprint (FIXYOURBODY).pdf";
+      document.body.appendChild(a);
       a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(blobUrl);
       // auto-close after 2s so user can explore the site
       setTimeout(() => onClose(), 2000);
     } catch {
