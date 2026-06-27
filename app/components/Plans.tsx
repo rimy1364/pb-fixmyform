@@ -49,6 +49,7 @@ const plans = [
     highlight: false,
     description: "Start your fitness journey with the essentials.",
     features: [
+      "Beginner friendly",
       "Personalised workout plan",
       "Custom meal plan",
       "Weekly check-ins",
