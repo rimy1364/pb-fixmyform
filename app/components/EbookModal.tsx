@@ -30,8 +30,8 @@ export default function EbookModal({ open, onClose }: Props) {
       setDone(true);
       // trigger download
       const a = document.createElement("a");
-      a.href = "/ebook.pdf";
-      a.download = "FIX YOUR BODY - Free Ebook.pdf";
+      a.href = "/Gut Health - Complete Healing Blueprint (FIXYOURBODY).pdf";
+      a.download = "Gut Health - Complete Healing Blueprint (FIXYOURBODY).pdf";
       a.click();
     } catch {
       setError("Something went wrong. Please try again.");
