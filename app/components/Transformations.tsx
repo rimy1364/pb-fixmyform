@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
+import Image from "next/image";
 
 const transformations = [
   { name: "Rachit",         occupation: "Software Engineer", duration: "32 Weeks", result: "-22 kg", weightBefore: "88 kg", weightAfter: "66 kg",  image: "/transformation/result8.jpeg" },
@@ -84,8 +85,7 @@ export default function Transformations() {
               {/* Image area — flush to card edges horizontally */}
               <div className="relative overflow-hidden" style={{ background: "#080f1d", aspectRatio: "2 / 3" }}>
                 {t.image ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img src={t.image} alt="Transformation" className="w-full h-full object-cover" />
+                  <Image src={t.image} alt={`${t.name} transformation`} fill className="object-cover" sizes="(max-width: 768px) 100vw, 448px" priority={false} />
                 ) : (
                   <div className="w-full h-full flex flex-col items-center justify-center gap-2">
                     <div className="flex gap-6">
