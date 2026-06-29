@@ -94,18 +94,6 @@ export default function Plans() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
-          <div
-            className="inline-block mb-3"
-            style={{
-              padding: "4px 14px", borderRadius: "999px",
-              border: "1px solid rgba(0,212,170,0.30)",
-              background: "rgba(0,212,170,0.08)",
-              color: "#00d4aa", fontSize: "11px", fontWeight: 600,
-              letterSpacing: "0.12em", textTransform: "uppercase",
-            }}
-          >
-            
-          </div>
           <h2 className="text-3xl md:text-4xl font-black mb-2">
             <span className="text-white">Choose Your </span>
             <span style={{ color: "#00d4aa" }}>Transformation Plan</span>
