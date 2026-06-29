@@ -1,13 +1,14 @@
 "use client";
 
 import { useState, useRef } from "react";
+import Image from "next/image";
 
 const testimonials = [
-  { chatImage: "/testimonials/chat1.jpeg" },
-  { chatImage: "/testimonials/chat2.jpeg" },
-  { chatImage: "/testimonials/chat3.jpeg" },
-  { chatImage: "/testimonials/chat4.jpeg" },
-  { chatImage: "/testimonials/chat5.jpeg" },
+  { chatImage: "/testimonials/chat1.jpeg", alt: "Client testimonial WhatsApp chat screenshot 1 — FIX YOUR BODY coaching result" },
+  { chatImage: "/testimonials/chat2.jpeg", alt: "Client testimonial WhatsApp chat screenshot 2 — FIX YOUR BODY coaching result" },
+  { chatImage: "/testimonials/chat3.jpeg", alt: "Client testimonial WhatsApp chat screenshot 3 — FIX YOUR BODY coaching result" },
+  { chatImage: "/testimonials/chat4.jpeg", alt: "Client testimonial WhatsApp chat screenshot 4 — FIX YOUR BODY coaching result" },
+  { chatImage: "/testimonials/chat5.jpeg", alt: "Client testimonial WhatsApp chat screenshot 5 — FIX YOUR BODY coaching result" },
 ];
 
 const TOTAL = testimonials.length;
@@ -73,9 +74,8 @@ export default function Testimonials() {
             >
               {testimonials.map((item, i) => (
                 <div key={i} className="shrink-0 w-full">
-                  <div className="rounded-2xl overflow-hidden" style={{ border: "1px solid rgba(255,255,255,0.10)" }}>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={item.chatImage} alt="Testimonial chat" className="w-full" style={{ display: "block" }} />
+                  <div className="rounded-2xl overflow-hidden relative" style={{ border: "1px solid rgba(255,255,255,0.10)" }}>
+                    <Image src={item.chatImage} alt={item.alt} width={448} height={800} className="w-full h-auto" style={{ display: "block" }} />
                   </div>
                 </div>
               ))}

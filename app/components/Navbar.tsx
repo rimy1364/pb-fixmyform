@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 const links = [
   { label: "About",           href: "#about" },
@@ -34,8 +35,7 @@ export default function Navbar() {
 
         {/* Logo */}
         <a href="#" className="flex items-center gap-2">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.png" alt="Fix Your Body" style={{ height: "40px", width: "40px", objectFit: "contain", borderRadius: "50%" }} />
+          <Image src="/logo.png" alt="FIX YOUR BODY logo — online fitness coaching by Prateek Bansal" width={40} height={40} style={{ objectFit: "contain", borderRadius: "50%" }} />
           <span style={{ fontSize: "16px", fontWeight: 800, letterSpacing: "-0.3px" }}>
             <span style={{ color: "#ffffff" }}>Fix </span>
             <span style={{ color: "#00d4aa" }}>Your </span>
