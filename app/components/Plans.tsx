@@ -104,7 +104,7 @@ export default function Plans() {
               letterSpacing: "0.12em", textTransform: "uppercase",
             }}
           >
-            Pricing
+            
           </div>
           <h2 className="text-3xl md:text-4xl font-black mb-2">
             <span className="text-white">Choose Your </span>
