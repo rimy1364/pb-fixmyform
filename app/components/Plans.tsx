@@ -99,7 +99,7 @@ export default function Plans() {
             <span style={{ color: "#00d4aa" }}>Transformation Plan</span>
           </h2>
           <p className="text-sm max-w-xl mx-auto" style={{ color: "rgba(255,255,255,0.50)" }}>
-            No lock-ins. Cancel anytime. Every plan is built around your goals, not a generic template.
+            Every plan is built around your goals, not a generic template.
           </p>
         </div>
 
