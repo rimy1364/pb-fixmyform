@@ -51,7 +51,7 @@ export default function Footer() {
                   ),
                 },
                 {
-                  href: `https://wa.me/919205802858`,
+                  href: `https://wa.me/918796684607`,
                   label: "WhatsApp",
                   svg: (
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">

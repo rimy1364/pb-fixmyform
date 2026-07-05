@@ -84,7 +84,7 @@ export default function RootLayout({
                 contactPoint: {
                   "@type": "ContactPoint",
                   contactType: "customer support",
-                  telephone: "+919205802858",
+                  telephone: "+918796684607",
                   availableLanguage: ["English", "Hindi"],
                 },
                 sameAs: [],

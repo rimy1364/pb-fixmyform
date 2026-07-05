@@ -1,6 +1,6 @@
 "use client";
 
-const WHATSAPP_NUMBER   = "919205802858";
+const WHATSAPP_NUMBER   = "918796684607";
 const WHATSAPP_MESSAGE  = "Hi Prateek, I am interested in FIXYOURBODY coaching. Can we connect?";
 const ENQUIRY_FORM_URL  = "https://docs.google.com/forms/d/e/1FAIpQLSdfByh_JqHdmSuRUuEphgbFe-Bf2ZvoGIto910Rn-9bDFqseQ/viewform";
 const INSTAGRAM_HANDLE  = "fixyourbody__";

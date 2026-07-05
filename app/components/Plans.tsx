@@ -65,7 +65,7 @@ const plans = [
   },
 ];
 
-const WHATSAPP_NUMBER = "919205802858";
+const WHATSAPP_NUMBER = "918796684607";
 
 const openWhatsApp = (planName: string, duration: string) => {
   const message = `Hi Prateek, I'd like to get started with the ${planName.toUpperCase()} plan (${duration}) on FIXYOURBODY. Can we connect?`;

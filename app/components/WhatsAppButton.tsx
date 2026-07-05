@@ -1,6 +1,6 @@
 "use client";
 
-const WHATSAPP_NUMBER = "919205802858";
+const WHATSAPP_NUMBER = "918796684607";
 const MESSAGE = "Hi Prateek, I'd like to know more about FIX YOUR BODY coaching!";
 
 export default function WhatsAppButton() {
