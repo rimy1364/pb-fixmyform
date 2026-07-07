@@ -6,6 +6,7 @@ import Transformations from "./components/Transformations";
 import Plans from "./components/Plans";
 import Testimonials from "./components/Testimonials";
 import EbookPopup from "./components/EbookPopup";
+import Journey from "./components/Journey";
 import BlogSection from "./components/BlogSection";
 import CTA from "./components/CTA";
 import Contact from "./components/Contact";
@@ -22,11 +23,12 @@ export default function Home() {
         <About />
         <HowItWorks />
         <Transformations />
+        <Journey />
         <Testimonials />
         <Plans />
-        <BlogSection />
         {/* <CTA /> */}
         <Contact />
+        <BlogSection />
       </main>
       <Footer />
       <CalendlyModal />
